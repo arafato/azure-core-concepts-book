@@ -1,15 +1,31 @@
 # Azure Ramp-Up
 A curated guide to get going fast on the Azure platform. 
-Links, best-practices, explanantions and comments, I wish I had known when I started to use Azure.
+Links, best-practices, explanantions and comments, I wish I had known before 
+when I started to use Azure.
 
-## Basics
-This chapter is about the the foundational building blocks of the Azure platform. Do not start anything serious 
-before you have gone through all of the subsequent sections.
+## Table of Contents
+
+  * [Fundamental Concepts](#fundamental_concepts)
+    * Basic Terminology
+    * Environments
+    * Regions
+    * Authentication
+    * Deployment Models
+    * Developer Tooling
+
+<a name="fundamental_concepts" />
+
+## Fundamental Concepts
+This chapter is about the the foundational building blocks of the Azure platform. 
+This chapter will help you understand the basic terminology and concepts you will
+need every day when working with Microsoft Azure. 
 ### Basic Terminology
 - Azure Portal: A graphical user interface to manage and operate your cloud-based environment.
+- Classic Portal: The old graphical user interface using the ASM deployment model
 - Azure Environment: A strictly isolated part of the Azure Cloud Platform
 - Azure Geography: A defined area of the world that contains at least one Azure Region 
 - Azure region: A geographical location within a geography containing one or more Azure data-centers
+- Azure Subscription: A manageable group of resources for the accounting department
 - Microsoft account: A consumer account that has been created via [https://signup.live.com/](https://signup.live.com/)
 - Work or school account: An account that has been created in an Azure Active Directory. Includes Office365 accounts.
 - Azure Resource Manager (ARM): The modern deployment model in Azure.
@@ -18,11 +34,11 @@ before you have gone through all of the subsequent sections.
 
 ### Environments
 Azure is comprised of currently four different so-called *environments* that are strictly isolated from each other. 
-Strictly isolated means:
+*Strictly isolated* means:
 - They are operated and managed through different endpoints (same API interfaces, though)
 - Their authentification mechanisms (Azure Active Directory) do not have a trust-relationship with each other. Thus, environments 
 do not provide a single sign-on experience amongst each other  
-- They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against different endpoints)
+- They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against different endpoints
 - When using our Azure CLIs and SDKs be sure to configure them accordingly to let them talk to the correct environment (refer to TBD)
 
 Azure currently provides the following environments:
@@ -40,7 +56,11 @@ Portal: [https://portal.microsoft.com](https://portal.microsoft.com)
 
 #### Azure German Cloud
 Also known as *Microsoft Cloud Deutschland*. Comprised of 2 regions, one located in 
-Frankfurt, the other one in Magdeburg.
+Frankfurt, the other one in Magdeburg. Operated by T-Systems International GmbH, a 
+subsidiary of Deutsche Telekom. Serves as trustee, protecting disclosure of data
+to third parties except as the customer directs or as required by German law. 
+Even Microsoft does not have access to customer data or the data centres 
+without approval from and supervision by the German data trustee.
 More information at [https://azure.microsoft.com/overview/clouds/germany](https://azure.microsoft.com/overview/clouds/germany)
 
 Sign Up: [https://azure.microsoft.com/free/germany/](https://azure.microsoft.com/free/germany/)
@@ -75,11 +95,71 @@ as of now you cannot choose amongst the individual data-centers available in tha
 Please check services available by region at [https://azure.microsoft.com/regions/services/](https://azure.microsoft.com/regions/services/)
 
 ### Authentication
-TODO
+Understanding Authentication in Azure can be complicated at the beginning. Most users
+are confused about how all the different pieces and terminologies such as *Azure AD, Tenant ID,
+Account Owner, Subscription Owner, Subscription Admin, Directory Admin, Co-Admin,* etc. 
+you will find in the official documentation fit together. It doesn't help neither that
+terms are used inconsistently throughout the web, and that Azure has two different
+authentication models, depending on whether you are using ARM or ASM (see subsequent section). 
+We will focus on ARM which is the current model and the one you should use for every new project.
+
+So let's provide clarity.
+
+#### Azure Active Directory
+Azure Active Directory (Azure AD) is Microsoft’s multi-tenant cloud based directory 
+and identity management service (see [https://docs.microsoft.com/azure/active-directory/active-directory-whatis](https://docs.microsoft.com/azure/active-directory/active-directory-whatis).
+In Azure AD, a tenant is representative of an organization. It is a dedicated instance 
+of the Azure AD service that an organization receives and owns when it signs up for a 
+Microsoft cloud service such as Azure, Microsoft Intune, or Office 365. 
+Each Azure AD tenant is distinct and separate from other Azure AD tenants.
+
+A tenant houses the users in a company and the information about them - their passwords, 
+user profile data, permissions, and so on. It also contains groups, applications, 
+and other information pertaining to an organization and its security.
+
+There are two types of accounts you can use to sign in: a Microsoft account 
+(formerly known as Microsoft Live ID) and a work or school account, which is an 
+account stored in Azure AD. There is a federation relationship between between
+Azure AD and the Microsoft account consumer identity system. As a result, Azure AD is
+able to authenticate "guest" Microsoft accounts as well as "native" Azure AD accounts.
+
+##### Gotchas
+- Account Overlap: It is not possible anymore to create a new personal Microsoft 
+account using a work/school email address, when the email domain is configured in Azure AD.
+See [https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/) for details
+
+#### Subscriptions
+Every Azure subscription has a trust relationship with an Azure AD instance. 
+This means that it trusts that directory to authenticate users, services, and devices. 
+Multiple subscriptions can trust the same directory, but a subscription trusts only
+one directory. 
+
+This trust relationship that a subscription has with a directory is unlike the relationship
+that a subscription has with all other resources in Azure (websites, databases, and so on),
+which are more like child resources of a subscription. 
+If a subscription expires, then access to those other resources associated with 
+the subscription also stops. But the directory remains in Azure, and you can 
+associate another subscription with that directory and continue to manage the 
+directory users.
+
+Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory) for a more detailed discussion.
+#### Managing a subscription and an Azure AD Tenant
+First, let's define the terminology because this often leads to confusion.
+Azure 
+
+https://docs.microsoft.com/en-us/azure/billing/billing-add-change-azure-subscription-administrator
+
+Note the differences between ASM and ARM terminology:
+Azure Admin (Owner Role on Subscription level) in ARM land is the equivalent concept of a Subscription Admin / Co-Admin in ASM land
+Sometimes no matter if you are in ARM or ASM land both are referred to as Azure Subscription Admins or Service Administrator.
+ 
+Also there is a difference between an Azure Subscription Admin and a Azure AD admin:
+Both are two separate concepts. Azure subscription admins can manage resources in Azure and can view the Active Directory extension in the Azure classic portal (because the Azure classic portal is an Azure resource). Directory admins can manage properties in the directory.
+A person can be in both roles but this isn’t required. A user can be assigned to the directory global administrator role but not be assigned as Service administrator or co-administrator of an Azure subscription. Without being an administrator of the subscription, this user cannot sign in to the Azure classic portal. But the user could perform directory administration tasks using other tools such as Azure AD PowerShell or Office 365 Admin Center.
 
 ### Deployment Models 
 ARM vs ASM
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview
 
 ### Developer Tooling
-TODO: CLIs, SDKs, IDEs and according configuration
+TODO: Portal, CLIs, SDKs, IDEs and according configuration
