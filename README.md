@@ -148,12 +148,14 @@ Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-direc
 #### Understanding User and Roles Management
 First, let's define the terminology and roles because this often leads to confusion.
 Generally speaking, an indentity in Azure AD can be of two types: *Administrator* and *User*.
-An *Administrator* can manage properties in Azure AD, while a *User* roles can only manage Azure
+An *Administrator* can manage properties in Azure AD, while a *User* can only manage Azure
 resources such as VMs or Storage (depending on the according access rights). 
 
 When we talk about administrators in the context of Azure, however, we usually 
 do not refer to this *Administrator* type. Instead, people are usually using the
 notion of *Azure Active Directory Admin* and *Azure Subscription Admin*.
+
+Let's examine both of them in more detail.
 
 **Azure Active Directory Admin**  
 Azure AD admins (*Administrator* type) can manage properties in the Azure AD like performing 
