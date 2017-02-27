@@ -38,7 +38,7 @@ Azure is comprised of currently four different so-called *environments* that are
 - They are operated and managed through different endpoints (same API interfaces, though)
 - Their authentification mechanisms (Azure Active Directory) do not have a trust-relationship with each other. Thus, environments 
 do not provide a single sign-on experience amongst each other  
-- They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against different endpoints
+- They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against the different management and service endpoints
 - When using our Azure CLIs and SDKs be sure to configure them accordingly to let them talk to the correct environment (refer to TBD)
 
 Azure currently provides the following environments:
