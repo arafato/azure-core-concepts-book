@@ -5,15 +5,13 @@ when I started to use Azure.
 
 ## Table of Contents
 
-  * [Fundamental Concepts](#fundamental_concepts)
-    * Basic Terminology
-    * Environments
-    * Regions
-    * Authentication
-    * Deployment Models
-    * Developer Tooling
-
-<a name="fundamental_concepts" />
+  * [Fundamental Concepts](#fundamental-concepts)
+    * [Basic Terminology](#basic-terminology)
+    * [Environments](#environments)
+    * [Regions](#regions)
+    * [Authentication](#authentication)
+    * [Deployment Models](#deployment-models)
+    * [Developer Tooling](#developer-tooling)
 
 ## Fundamental Concepts
 This chapter is about the the foundational building blocks of the Azure platform. 
