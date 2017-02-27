@@ -107,7 +107,7 @@ So let's provide clarity.
 
 #### Azure Active Directory
 Azure Active Directory (Azure AD) is Microsoft’s multi-tenant cloud based directory 
-and identity management service (see [https://docs.microsoft.com/azure/active-directory/active-directory-whatis](https://docs.microsoft.com/azure/active-directory/active-directory-whatis).
+and identity management service (see [https://docs.microsoft.com/azure/active-directory/active-directory-whatis](https://docs.microsoft.com/azure/active-directory/active-directory-whatis)).
 In Azure AD, a tenant is representative of an organization. It is a dedicated instance 
 of the Azure AD service that an organization receives and owns when it signs up for a 
 Microsoft cloud service such as Azure, Microsoft Intune, or Office 365. 
@@ -151,19 +151,18 @@ Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-direc
 First, let's define the terminology and roles because this often leads to confusion.
 Generally speaking, an indentity in Azure AD can be in one of two roles: *Administrator* and *User*.
 *Administrator* roles can manage properties in Azure AD, while *User* roles can only manage Azure
-resources such as VMs or Storage (depending on his access rights). 
+resources such as VMs or Storage (depending on the according access rights). 
 
-We usually refer to an identity in the *Administrator* role as an *Azure Active Directory Admin*.
-An indentity in the *User* role is someone who has been assigned a certain role 
-that grants him Owner, Contributor or Reader rights at a certains scope of a subscription.
-
-Let's examine this in more detail. 
+When we talk about administrator roles in the context of Azure, however, we usually 
+do not refer to this broader *Administrator* role. Instead, people are usually using the
+notion of *Azure Active Directory Admin* and *Azure Subscription Admin*.
 
 **Azure Active Directory Admin**  
-Azure AD admins can manage properties in the Azure AD like performing 
+Azure AD admins (*Administrator* role) can manage properties in the Azure AD like performing 
 directory administration tasks using tools such as Azure AD PowerShell or 
 Office 365 Admin Center. They have not necessarily access to the associated subscriptions.
 It is possible but this isn’t required. 
+
 
 Typically, the account you are using for the initial sign up for an Azure account, is both
 an Azure AD Admin and an Azure Subscription Admin (see next section). But again, 
@@ -172,7 +171,7 @@ this is not required.
 This role is also sometimes referred to as *Account Admin*.
 
 **Azure Subscription Admin**   
-An Azure Subscription Admin is an identity that has an owner role on subscription level. 
+An Azure Subscription Admin (can be both in Azure AD *Administrator* role or *User* role) is an identity that has an owner role on subscription level. 
 That means it has has full access to all Azure resources including the right to delegate access to others.
 Access Management in Azure is done via *Role-based Access Control (RBAC)* (see next section)
 which lets you assign appropriate roles to users, groups, and applications at different scopes
@@ -189,7 +188,7 @@ That is, someone with an *Owner* role at subscription level. We could also think
 an identity with only *Contributor* role on a certain resource group scope. From a conceptual
 point of view both users do not differ except for their assigned roles and rights.
 
-##### Resource-based Access Control (RBAC)
+##### Role-based Access Control (RBAC)
 [https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is](https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is)
 
 ##### Different Types of Accounts  
