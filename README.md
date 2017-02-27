@@ -97,7 +97,7 @@ Please check services available by region at [https://azure.microsoft.com/region
 ### Authentication
 Understanding Authentication in Azure can be complicated at the beginning. Most users
 are confused about how all the different pieces and terminologies such as *Azure AD, Tenant ID,
-Account Owner, Subscription Owner, Subscription Admin, Directory Admin, Co-Admin,* etc. 
+Account Owner, Subscription Owner, Subscription Admin, Directory Admin, Co-Admin, RBAC* etc. 
 you will find in the official documentation fit together. It doesn't help neither that
 terms are used inconsistently throughout the web, and that Azure has two different
 authentication models, depending on whether you are using ARM or ASM (see subsequent section). 
@@ -112,6 +112,10 @@ In Azure AD, a tenant is representative of an organization. It is a dedicated in
 of the Azure AD service that an organization receives and owns when it signs up for a 
 Microsoft cloud service such as Azure, Microsoft Intune, or Office 365. 
 Each Azure AD tenant is distinct and separate from other Azure AD tenants.
+
+An Azure AD tenant has always the following domain assigned **.onmicrosoft.com.* For example, 
+if you sign up with your MS consumer account *joe.doe@outlook.com* and Azure AD tenant is 
+automatically created for you similiar to *joedoeoutlook.onmicrosoft.com*.
 
 A tenant houses the users in a company and the information about them - their passwords, 
 user profile data, permissions, and so on. It also contains groups, applications, 
@@ -143,19 +147,55 @@ associate another subscription with that directory and continue to manage the
 directory users.
 
 Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory) for a more detailed discussion.
-#### Managing a subscription and an Azure AD Tenant
-First, let's define the terminology because this often leads to confusion.
-Azure 
+#### User and Roles Management - Terminology
+First, let's define the terminology and roles because this often leads to confusion.
+Generally speaking, an indentity in Azure AD can be in one of two roles: *Administrator* and *User*.
+*Administrator* roles can manage properties in Azure AD, while *User* roles can only manage Azure
+resources such as VMs or Storage (depending on his access rights). 
 
-https://docs.microsoft.com/en-us/azure/billing/billing-add-change-azure-subscription-administrator
+We usually refer to an identity in the *Administrator* role as an *Azure Active Directory Admin*.
+An indentity in the *User* role is someone who has been assigned a certain role 
+that grants him Owner, Contributor or Reader rights at a certains scope of a subscription.
 
-Note the differences between ASM and ARM terminology:
-Azure Admin (Owner Role on Subscription level) in ARM land is the equivalent concept of a Subscription Admin / Co-Admin in ASM land
-Sometimes no matter if you are in ARM or ASM land both are referred to as Azure Subscription Admins or Service Administrator.
- 
-Also there is a difference between an Azure Subscription Admin and a Azure AD admin:
-Both are two separate concepts. Azure subscription admins can manage resources in Azure and can view the Active Directory extension in the Azure classic portal (because the Azure classic portal is an Azure resource). Directory admins can manage properties in the directory.
-A person can be in both roles but this isn’t required. A user can be assigned to the directory global administrator role but not be assigned as Service administrator or co-administrator of an Azure subscription. Without being an administrator of the subscription, this user cannot sign in to the Azure classic portal. But the user could perform directory administration tasks using other tools such as Azure AD PowerShell or Office 365 Admin Center.
+Let's examine this in more detail. 
+
+**Azure Active Directory Admin**  
+Azure AD admins can manage properties in the Azure AD like performing 
+directory administration tasks using tools such as Azure AD PowerShell or 
+Office 365 Admin Center. They have not necessarily access to the associated subscriptions.
+It is possible but this isn’t required. 
+
+Typically, the account you are using for the initial sign up for an Azure account, is both
+an Azure AD Admin and an Azure Subscription Admin (see next section). But again, 
+this is not required.
+
+This role is also sometimes referred to as *Account Admin*.
+
+**Azure Subscription Admin**   
+An Azure Subscription Admin is an identity that has an owner role on subscription level. 
+That means it has has full access to all Azure resources including the right to delegate access to others.
+Access Management in Azure is done via *Role-based Access Control (RBAC)* (see next section)
+which lets you assign appropriate roles to users, groups, and applications at different scopes
+such as subscription, resource groups, or a single subscription.
+
+In the old ASM world the equivalent role is often referred to as *Service Administrator* or
+*Co-Admin*, and unfortunately they are still used in the ARM world. Do not use them since 
+they do not provide the same power and flexibility as the new concepts discussed here. 
+In particular, they are lacking the entire *RBAC* functionality and force you to use the old portal
+if you need to make any changes.
+
+So in essence an Azure Subscription Admin is only a specialization of a regular *User* role.
+That is, someone with an *Owner* role at subscription level. We could also think about
+an identity with only *Contributor* role on a certain resource group scope. From a conceptual
+point of view both users do not differ except for their assigned roles and rights.
+
+##### Resource-based Access Control (RBAC)
+[https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is](https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is)
+
+##### Different Types of Accounts  
+- Consumer Accounts
+- Azure AD Accounts
+- Guest Accounts
 
 ### Deployment Models 
 ARM vs ASM
