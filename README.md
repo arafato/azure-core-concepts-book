@@ -78,7 +78,7 @@ More information at [https://azure.microsoft.com/overview/clouds/government/](ht
 
 Trial Registration Form: [https://azuregov.microsoft.com/trial/azuregovtrial](https://azuregov.microsoft.com/trial/azuregovtrial)
 
-### Azure Regions
+### Regions
 The Azure platform is currently comprised of 34 regions world-wide.
 A region is a geographical location of a cluster of Azure data-centers. Each region is assigned to one and only one environment.
 More information at [https://azure.microsoft.com/regions/](https://azure.microsoft.com/regions/)
