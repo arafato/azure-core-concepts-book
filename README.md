@@ -74,7 +74,12 @@ as of now you cannot choose amongst the individual data-centers available in tha
 - Availability of Azure services depend on the region. Not every service that is *Generally Available* is available in every region.
 Please check services available by region at [https://azure.microsoft.com/regions/services/](https://azure.microsoft.com/regions/services/)
 
-### Azure Active Directory
+### Authentication
+TODO
 
-### ARM vs ASM
+### Deployment Models 
+ARM vs ASM
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview
+
+### Developer Tooling
+TODO: CLIs, SDKs, IDEs and according configuration
