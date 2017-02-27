@@ -178,7 +178,7 @@ such as subscription, resource groups, or a single subscription.
 In the old ASM world the equivalent role is often referred to as *Service Administrator* or
 *Co-Admin*, and unfortunately they are still used in the ARM world. Do not use them since 
 they do not provide the same power and flexibility as the new concepts discussed here. 
-In particular, they are lacking the entire *RBAC* functionality and force you to use the old portal
+In particular, they are lacking the entire *RBAC* functionality and force you to use the classic portal
 if you need to make any changes.
 
 So in essence an Azure Subscription Admin is only a specialization of a regular *User* role.
