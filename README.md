@@ -145,7 +145,7 @@ associate another subscription with that directory and continue to manage the
 directory users.
 
 Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory) for a more detailed discussion.
-#### User and Roles Management - Terminology
+#### Understanding User and Roles Management
 First, let's define the terminology and roles because this often leads to confusion.
 Generally speaking, an indentity in Azure AD can be in one of two roles: *Administrator* and *User*.
 *Administrator* roles can manage properties in Azure AD, while *User* roles can only manage Azure
