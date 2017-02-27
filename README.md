@@ -62,7 +62,7 @@ Trial Registration Form: [https://azuregov.microsoft.com/trial/azuregovtrial](ht
 
 ### Azure Regions
 The Azure platform is currently comprised of 34 regions world-wide.
-A region is a geographical location of a cluster of Azure data-centers. 
+A region is a geographical location of a cluster of Azure data-centers. Each region is assigned to one and only one environment.
 More information at [https://azure.microsoft.com/regions/](https://azure.microsoft.com/regions/)
 
 Azure regions are organized as so-called *Paired Regions*. Each Azure region is paired with another region within the same geography, together making a regional pair. 
