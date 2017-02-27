@@ -21,13 +21,13 @@ This chapter will help you understand the basic terminology and concepts you wil
 need every day when working with Microsoft Azure. 
 ### Basic Terminology
 - Azure Portal: A graphical user interface to manage and operate your cloud-based environment.
-- Classic Portal: The old graphical user interface using the ASM deployment model
+- Classic Portal: The old graphical user interface using the ASM deployment model (deprecated)
 - Azure Environment: A strictly isolated part of the Azure Cloud Platform
 - Azure Geography: A defined area of the world that contains at least one Azure Region 
 - Azure region: A geographical location within a geography containing one or more Azure data-centers
 - Azure Subscription: A manageable group of resources for the accounting department
 - Microsoft account: A consumer account that has been created via [https://signup.live.com/](https://signup.live.com/)
-- Work or school account: An account that has been created in an Azure Active Directory. Includes Office365 accounts.
+- Work or school account: An account that has been created in an (Azure) Active Directory. Includes Office365 accounts.
 - Azure Resource Manager (ARM): The modern deployment model in Azure.
 - Azure Service Manager (classic): The classic deployment model. Do not use for new projects. 
 - Azure Resource:  A manageable item that is available through Azure. Some common resources are a virtual machine, storage account, web app, database, and virtual network, but there are many more.
@@ -96,9 +96,9 @@ Please check services available by region at [https://azure.microsoft.com/region
 
 ### Authentication
 Understanding Authentication in Azure can be complicated at the beginning. Most users
-are confused about how all the different pieces and terminologies such as *Azure AD, Tenant ID,
+are confused about all the different pieces and terminologies such as *Azure AD, Tenant ID,
 Account Owner, Subscription Owner, Subscription Admin, Directory Admin, Co-Admin, RBAC* etc. 
-you will find in the official documentation fit together. It doesn't help neither that
+coming together. It doesn't help neither that
 terms are used inconsistently throughout the web, and that Azure has two different
 authentication models, depending on whether you are using ARM or ASM (see subsequent section). 
 We will focus on ARM which is the current model and the one you should use for every new project.
