@@ -15,6 +15,7 @@ before you have gone through all of the subsequent sections.
 - Azure Resource Manager (ARM): The modern deployment model in Azure.
 - Azure Service Manager (classic): The classic deployment model. Do not use for new projects. 
 - Azure Resource:  A manageable item that is available through Azure. Some common resources are a virtual machine, storage account, web app, database, and virtual network, but there are many more.
+
 ### Environments
 Azure is comprised of currently four different so-called *environments* that are strictly isolated from each other. 
 Strictly isolated means:
