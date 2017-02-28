@@ -103,6 +103,31 @@ We will focus on ARM which is the current model and the one you should use for e
 
 So let's provide clarity.
 
+#### Control Plane vs Data Plane
+Before we look at the different aspects and services let's quickly define what we mean when we
+refer to *Control Plane* and *Data Plane*.
+
+A **Control Plane** is the set of APIs that allow you to provision and configure a resource.  
+A **Data Plane** is the set of APIs that allow you to actually use the resource.
+
+Example: In order to provision a Storage Account, I need to use a different set APIs compared to
+when I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
+provision an EventHub compared to when I actually push data to it.  
+
+Why is this important? Because Azure provides two different authentication mechanisms.
+The one that is based on Azure AD (authentication) and RBAC (authorization) which we will
+thoroughly discuss in the subsequent sections, and one that is based on *Shared Keys*.
+
+Every operation on the **Control Plane** needs to be authenticated against Azure AD. However, 
+not every operation against the **Data Plane** needs to be also authenitcated against Azure AD. Some
+services such as Azure Storage Service, Service Bus, and Event Hubs rely on so-called *Shared Keys*. 
+
+So if you want to provision a Storage Account, you will need to authenticate against Azure AD. In order
+to read and write data from it you are using shared keys. 
+
+Most service on Azure, however, rely on Azure AD and RBAC for managing the Control Plane 
+*and* the Data Plane.
+
 #### Azure Active Directory
 Azure Active Directory (Azure AD) is Microsoft’s multi-tenant cloud based directory 
 and identity management service (see [https://docs.microsoft.com/azure/active-directory/active-directory-whatis](https://docs.microsoft.com/azure/active-directory/active-directory-whatis)).
@@ -131,9 +156,10 @@ account using a work/school email address, when the email domain is configured i
 See [https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/) for details
 
 #### Subscriptions
+An Azure subscription is just a manageable group of resources for the accounting department.
 Every Azure subscription has a trust relationship with an Azure AD instance. 
 This means that it trusts that directory to authenticate users, services, and devices. 
-Multiple subscriptions can trust the same directory, but a subscription trusts only
+Multiple subscriptions can trust the same directory, but a subscription trusts one and only
 one directory. 
 
 This trust relationship that a subscription has with a directory is unlike the relationship
@@ -202,7 +228,13 @@ point of view both users do not differ except for their assigned roles and right
 Now what exactly is this RBAC, Owner, and Contributor role all about? Next!
 
 ##### Role-based Access Control (RBAC)
+RBAC is all about defining *what* your users are allowed to do.
+
+
 [https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is](https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is)
+
+**Gotcha**
+- Authent
 
 ##### Different Types of Accounts  
 - Consumer Accounts
