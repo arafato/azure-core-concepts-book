@@ -45,6 +45,13 @@ Azure currently provides the following environments:
 - Azure US Government
 - Azure China Cloud
 
+**Gotcha**
+>- The *Azure Cloud* environment is the only one which has a trust relationship with the
+>Microsoft consumer identity system. This lets you signup and login with a Microsoft account
+>(formely known as LiveID). This is also the reason why you cannot use a Microsoft account to
+>signup and login into the other Cloud environments since these do *not* have a trust relationship
+>with the Microsoft consumer identity system due to their restricted privacy and data regulations.
+
 #### Azure Cloud
 Also known as the International Cloud. Currently comprised of 30 regions world-wide.
 
@@ -87,10 +94,10 @@ Azure regions are organized as so-called *Paired Regions*. Each Azure region is 
 The exception is Brazil South, which is paired with a region outside its geography.
 More information at [https://docs.microsoft.com/azure/best-practices-availability-paired-regions](https://docs.microsoft.com/azure/best-practices-availability-paired-regions)
 #### Gotchas
-- When deploying new resources onto Azure you can select the region to deploy to, however, 
-as of now you cannot choose amongst the individual data-centers available in that region. 
-- Availability of Azure services depend on the region. Not every service that is *Generally Available* is available in every region.
-Please check services available by region at [https://azure.microsoft.com/regions/services/](https://azure.microsoft.com/regions/services/)
+>- When deploying new resources onto Azure you can select the region to deploy to, however, 
+>as of now you cannot choose amongst the individual data-centers available in that region. 
+>- Availability of Azure services depend on the region. Not every service that is *Generally Available* is available in every region.
+>Please check services available by region at [https://azure.microsoft.com/regions/services/](https://azure.microsoft.com/regions/services/)
 
 ### Authentication and Authorization
 Understanding Authentication in Azure can be complicated at the beginning. Most users
@@ -152,9 +159,9 @@ Azure AD and the Microsoft account consumer identity system. As a result, Azure 
 able to authenticate "guest" Microsoft accounts as well as "native" Azure AD accounts.
 
 ##### Gotchas
-- Account Overlap: It is not possible anymore to create a new personal Microsoft 
-account using a work/school email address, when the email domain is configured in Azure AD.
-See [https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/) for details
+>- Account Overlap: It is not possible anymore to create a new personal Microsoft 
+>account using a work/school email address, when the email domain is configured in Azure AD.
+>See [https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/) for details
 
 #### Subscriptions
 An Azure subscription is just a manageable group of resources for the accounting department.
@@ -230,17 +237,40 @@ Now what exactly is this RBAC, Owner, and Contributor role all about? Next!
 
 ##### Role-based Access Control (RBAC)
 RBAC is all about defining *what* your users are allowed to do.
+For this purpose it provides built-in roles that you can use to assign to a user, groups, and
+applications.  
+Azure RBAC has three basic roles that apply to all resource types:
+- **Owner** has full access to all resources including the right to delegate access to others.
+- **Contributor** can create and manage all types of Azure resources but can’t grant access to others.
+- **Reader** can view existing Azure resources.
 
+The rest of the RBAC roles in Azure allow management of specific Azure resources. 
+For example, the **Virtual Machine Contributor** role allows the user to create and 
+manage virtual machines. It does not give them access to the virtual network or the 
+subnet that the virtual machine connects to.    
+A more detailed discussion can be found at [https://docs.microsoft.com/azure/active-directory/role-based-access-control-what-is](https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is)
 
-[https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is](https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is)
+If you're looking to define your own roles for even more control, see how to build [Custom roles in Azure RBAC](https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles).
+Note, however, that custom roles are currently supported only via [Powershell](https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-powershell), 
+the [Azure CLI](https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-azure-cli),
+and the [REST API](https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-rest).
 
-**Gotcha**
-- Authent
+Now let's talk about **Groups** and **Group Owners**.  
+A group in the RBAC-context provide a means to group users, and let them utilize the privileged access it grants.
+From a conceptual point of view, they are really similiar to GNU/Linux groups for access control. 
+What is interesting is, that you can assign a so-called **Group Owner** to a particular group. 
+The membership of the group is now managed by the group owner. 
+The resource owner effectively delegates the permission to assign users to the subscription, resource group, or resource 
+to the owner of the group.  
+A detailed discussion of this topic can be found at [https://docs.microsoft.com/azure/active-directory/active-directory-manage-groups](https://docs.microsoft.com/azure/active-directory/active-directory-manage-groups).
 
-##### Different Types of Accounts  
-- Consumer Accounts
-- Azure AD Accounts
-- Guest Accounts
+#### Authenticating an app or a script via Service Principals
+Until now we only talked about authenticating real users, human beings. But what if your script
+or application needs to authenticate itself (via certificates) in order to access Azure resources? 
+This is where **Service Principals** come into play. Please refer to both links below in order
+to learn more about this topic, and to learn how to set up a service principal.  
+- [Application and service principal objects in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-application-objects)
+- [Use portal to create Active Directory application and service principal that can access resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authenticate-service-principal)
 
 ### Deployment Models 
 ARM vs ASM
