@@ -110,7 +110,7 @@ refer to *Control Plane* and *Data Plane*.
 A **Control Plane** is the set of APIs that allow you to provision and configure a resource.  
 A **Data Plane** is the set of APIs that allow you to actually use the resource.
 
-Example: In order to provision a Storage Account, I need to use a different set APIs compared to
+Example: In order to provision a Storage Account, I need to use a different set of APIs compared to
 when I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
 provision an EventHub compared to when I actually push data to it.  
 
@@ -120,10 +120,11 @@ thoroughly discuss in the subsequent sections, and one that is based on *Shared 
 
 Every operation on the **Control Plane** needs to be authenticated against Azure AD. However, 
 not every operation against the **Data Plane** needs to be also authenitcated against Azure AD. Some
-services such as Azure Storage Service, Service Bus, and Event Hubs rely on so-called *Shared Keys*. 
+services such as [Azure Storage Service](https://docs.microsoft.com/azure/storage/storage-introduction),
+[Service Bus](https://docs.microsoft.com/azure/service-bus/), and [Event Hubs](https://docs.microsoft.com/azure/event-hubs/) rely on so-called *Shared Keys*. 
 
-So if you want to provision a Storage Account, you will need to authenticate against Azure AD. In order
-to read and write data from it you are using shared keys. 
+So if you want to provision a Storage Account you will need to authenticate against Azure AD.
+In order to read and write data from it (which are operations on the data plane) you are using shared keys. 
 
 Most service on Azure, however, rely on Azure AD and RBAC for managing the Control Plane 
 *and* the Data Plane.
