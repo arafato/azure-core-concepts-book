@@ -10,7 +10,7 @@ I started using Azure.
     * [Environments](#environments)
     * [Regions](#regions)
     * [Authentication and Authorization](#authentication-and-authorization)
-    * [ARM Deployment Models](#arm-deployment-models)
+    * [ARM Deployment Model](#arm-deployment-model)
 * [Developer Tooling](#developer-tooling)
 * [Open-Source Ecosystem](#open-source-ecosystem)
 * [Learning Paths](#learning-paths)
@@ -320,8 +320,8 @@ something mind-boggling is happening in the Azure universe.
 - [Microsoft Azure](https://twitter.com/Azure)  
 The official account for Microsoft Account. Follow for news and updates from the #Azure team and community.
 - [Corey Sanders](https://twitter.com/CoreySandersWA)  
- Director of Program Manager responsible for IaaS and Cloud Services. 
- - [Mark Russinovich](https://twitter.com/markrussinovich)  
- CTO of Microsoft Azure
- - [Scott Guthrie](https://twitter.com/scottgu)  
- Runs the Cloud & Enterprise division at Microsoft
+Director of Program Manager responsible for IaaS and Cloud Services. 
+- [Mark Russinovich](https://twitter.com/markrussinovich)  
+CTO of Microsoft Azure
+- [Scott Guthrie](https://twitter.com/scottgu)  
+Runs the Cloud & Enterprise division at Microsoft
