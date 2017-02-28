@@ -41,7 +41,7 @@ Azure is comprised of currently four different so-called *environments* that are
 - Their authentification mechanisms (Azure Active Directory) do not have a trust-relationship with each other. Thus, environments 
 do not provide a single sign-on experience amongst each other  
 - They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against the different management and service endpoints
-- When using our Azure CLIs and SDKs be sure to configure them accordingly to let them talk to the correct environment (refer to TBD)
+
 
 Azure currently provides the following environments:
 - Azure Cloud
@@ -55,6 +55,8 @@ Azure currently provides the following environments:
 >(formely known as LiveID). This is also the reason why you cannot use a Microsoft account to
 >signup and login into the other Cloud environments since these do *not* have a trust relationship
 >with the Microsoft consumer identity system due to their restricted privacy and data regulations.
+>- When using our Azure CLIs and SDKs be sure to configure them accordingly to let 
+them talk to the correct environment (see section [Developer Tooling](#developer-tooling) for more information)
 
 #### Azure Cloud
 Also known as the International Cloud. Currently comprised of 30 regions world-wide.
