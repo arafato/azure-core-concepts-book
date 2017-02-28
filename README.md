@@ -132,8 +132,8 @@ Why is this important? Because Azure provides two different authentication mecha
 The one that is based on Azure AD (authentication) and RBAC (authorization) which we will
 thoroughly discuss in the subsequent sections, and one that is based on *Shared Keys*.
 
-Every operation on the **Control Plane** needs to be authenticated against Azure AD. However, 
-not every operation against the **Data Plane** needs to be also authenitcated against Azure AD. Some
+Every operation on the **Control Plane** needs to be authenticated against Azure AD. Every operation. Period.
+However, not every operation against the **Data Plane** needs to also be authenticated against Azure AD. Some
 services such as [Azure Storage Service](https://docs.microsoft.com/azure/storage/storage-introduction),
 [Service Bus](https://docs.microsoft.com/azure/service-bus/), and [Event Hubs](https://docs.microsoft.com/azure/event-hubs/) rely on so-called *Shared Keys*. 
 
