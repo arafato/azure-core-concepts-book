@@ -267,6 +267,7 @@ A detailed discussion of this topic can be found at [https://docs.microsoft.com/
 #### Authenticating an app or a script via Service Principals
 Until now we only talked about authenticating real users, human beings. But what if your script
 or application needs to authenticate itself (via certificates) in order to access Azure resources? 
+Or if it needs to participate in Authentication Workflows such as OAuth2? 
 This is where **Service Principals** come into play. Please refer to both links below in order
 to learn more about this topic, and to learn how to set up a service principal.  
 - [Application and service principal objects in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-application-objects)
