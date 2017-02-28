@@ -116,12 +116,13 @@ We will focus on ARM which is the current model and the one you should use for e
 
 So let's provide clarity.
 
-#### Control Plane vs Data Plane
+#### Short tale about two different authentication schemas
 Before we look at the different aspects and services let's quickly define what we mean when we
 refer to *Control Plane* and *Data Plane*.
 
-A **Control Plane** is the set of APIs that allow you to provision and configure a resource.  
-A **Data Plane** is the set of APIs that allow you to actually use the resource.
+>A **Control Plane** is the set of APIs that allow you to provision and configure a resource.  
+>
+>A **Data Plane** is the set of APIs that allow you to actually use the resource.
 
 Example: In order to provision a Storage Account, I need to use a different set of APIs compared to
 when I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
