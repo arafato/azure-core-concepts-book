@@ -24,6 +24,7 @@ need every day when working with Microsoft Azure.
 - Azure Geography: A defined area of the world that contains at least one Azure Region 
 - Azure region: A geographical location within a geography containing one or more Azure data-centers
 - Azure Subscription: A manageable group of resources for the accounting department
+- Azure Resource Group: A logical container associated with exactly one subscription that holds related resources for an Azure solution
 - Microsoft account: A consumer account that has been created via [https://signup.live.com/](https://signup.live.com/)
 - Work or school account: An account that has been created in an (Azure) Active Directory. Includes Office365 accounts.
 - Azure Resource Manager (ARM): The modern deployment model in Azure.
