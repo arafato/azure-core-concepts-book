@@ -9,7 +9,7 @@ when I started to use Azure.
     * [Basic Terminology](#basic-terminology)
     * [Environments](#environments)
     * [Regions](#regions)
-    * [Authentication](#authentication)
+    * [Authentication and Authorization](#authentication-and-authorization)
     * [Deployment Models](#deployment-models)
     * [Developer Tooling](#developer-tooling)
 
@@ -92,7 +92,7 @@ as of now you cannot choose amongst the individual data-centers available in tha
 - Availability of Azure services depend on the region. Not every service that is *Generally Available* is available in every region.
 Please check services available by region at [https://azure.microsoft.com/regions/services/](https://azure.microsoft.com/regions/services/)
 
-### Authentication
+### Authentication and Authorization
 Understanding Authentication in Azure can be complicated at the beginning. Most users
 are confused about all the different pieces and terminologies such as *Azure AD, Tenant ID,
 Account Owner, Subscription Owner, Subscription Admin, Directory Admin, Co-Admin, RBAC* etc. 
@@ -148,8 +148,8 @@ Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-direc
 #### Understanding User and Roles Management
 First, let's define the terminology and roles because this often leads to confusion.
 Generally speaking, an indentity in Azure AD can be of two types: *Administrator* and *User*.
-An *Administrator* can manage properties in Azure AD, while a *User* can only manage Azure
-resources such as VMs or Storage (depending on the according access rights). 
+An *Administrator* can manage properties in Azure AD such as creating users, while a *User* 
+can only manage Azure resources such as VMs or Storage (depending on the according access rights). 
 
 When we talk about administrators in the context of Azure, however, we usually 
 do not refer to this *Administrator* type. Instead, people are usually using the
@@ -158,20 +158,31 @@ notion of *Azure Active Directory Admin* and *Azure Subscription Admin*.
 Let's examine both of them in more detail.
 
 **Azure Active Directory Admin**  
-Azure AD admins (*Administrator* type) can manage properties in the Azure AD like performing 
+Also known as *Account Admin* an Azure AD admin (*Administrator* type) can manage properties in the Azure AD like performing 
 directory administration tasks using tools such as Azure AD PowerShell or 
 Office 365 Admin Center. They have not necessarily access to the associated subscriptions.
-It is possible but this isn’t required. 
+It is possible but this isn’t required.
 
-
+An Azure AD Admin is always assigned a specific administrator role. To have access to all 
+administrative features of Azure AD, an administrator needs to be assigned the so-called
+*Global Administrator* role. Only those can also assign other administrator roles. 
+Administrator that have not been assigned the *Global Administrator* role, are usually referred
+to as *Limited Administrators*. Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-directory-assign-admin-roles](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-assign-admin-roles) for
+a detailed discussion and overview of the individual roles.  
+Much of these roles, however, are not really relevant in the context of Azure. Note, that
+Azure AD is used amongst a lot of different Microsoft products such as Office365, Dynamics365, 
+Skype for Business, Intune, and many more. This is why there are so many more roles.
+The ones that are usually relevant in the context of Azure are
+- Global Administrator
+- User account administrator
+ 
 Typically, the account you are using for the initial sign up for an Azure account, is both
-an Azure AD Admin and an Azure Subscription Admin (see next section). But again, 
+an Azure AD Admin (Global Administrator role) and an Azure Subscription Admin (see next section). But again, 
 this is not required.
 
-This role is also sometimes referred to as *Account Admin*.
-
 **Azure Subscription Admin**   
-An Azure Subscription Admin (can be both an *Administrator* type or *User* type) is an identity that has an owner role on subscription level. 
+An Azure Subscription Admin (can be both an *Administrator* type or *User* type) is an identity that has been assigned 
+an owner role on subscription level. 
 That means it has has full access to all Azure resources including the right to delegate access to others.
 Access Management in Azure is done via *Role-based Access Control (RBAC)* (see next section)
 which lets you assign appropriate roles to users, groups, and applications at different scopes
@@ -187,6 +198,8 @@ So in essence an Azure Subscription Admin is only a specialization of a regular 
 That is, someone with an *Owner* role at subscription level. We could also think about
 an identity with only *Contributor* role on a certain resource group scope. From a conceptual
 point of view both users do not differ except for their assigned roles and rights.
+
+Now what exactly is this RBAC, Owner, and Contributor role all about? Next!
 
 ##### Role-based Access Control (RBAC)
 [https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is](https://docs.microsoft.com/en-gb/azure/active-directory/role-based-access-control-what-is)
