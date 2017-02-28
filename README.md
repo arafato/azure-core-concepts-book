@@ -1,7 +1,7 @@
 # Azure Ramp-Up
 A curated guide to get going fast on the Azure platform. 
 Links, best-practices, explanantions and comments, I wish I had known before 
-when I started to use Azure.
+I started using Azure.
 
 ## Table of Contents
 
