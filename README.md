@@ -5,13 +5,16 @@ I started using Azure.
 
 ## Table of Contents
 
-  * [Fundamental Concepts](#fundamental-concepts)
+* [Fundamental Concepts](#fundamental-concepts)
     * [Basic Terminology](#basic-terminology)
     * [Environments](#environments)
     * [Regions](#regions)
     * [Authentication and Authorization](#authentication-and-authorization)
-    * [Deployment Models](#deployment-models)
-    * [Developer Tooling](#developer-tooling)
+    * [ARM Deployment Models](#arm-deployment-models)
+* [Developer Tooling](#developer-tooling)
+* [Open-Source Ecosystem](#open-source-ecosystem)
+* [Learning Paths](#learning-paths)
+* [Free Resources](#free-resources)
 
 ## Fundamental Concepts
 This chapter is about the the foundational building blocks of the Azure platform. 
@@ -274,9 +277,51 @@ to learn more about this topic, and to learn how to set up a service principal.
 - [Application and service principal objects in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-application-objects)
 - [Use portal to create Active Directory application and service principal that can access resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authenticate-service-principal)
 
-### Deployment Models 
+### ARM Deployment Model
 ARM vs ASM
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview
 
-### Developer Tooling
+## Developer Tooling
 TODO: Portal, CLIs, SDKs, IDEs and according configuration
+
+## Open Source Ecosystem
+TODO
+
+## Learning Paths
+The following link points you to an overview listing all available learning paths we
+are currently offering for the Azure platform.
+Use these learning paths to guide yourself through the documentation for our services so you can start to build effective cloud applications on Azure.  
+
+These learning paths do not encompass all of our services currently available. For many use-cases, however, 
+we think that the most relevant are covered. 
+
+[https://azure.microsoft.com/documentation/learning-paths/](https://azure.microsoft.com/documentation/learning-paths/)
+
+## Free Resources
+### Free Ebooks
+- [Fundamentals of Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/09/01/free-ebook-microsoft-azure-essentials-fundamentals-of-azure-second-edition/)
+- [Understanding Azure - A Guide for Developers](https://azure.microsoft.com/en-us/campaigns/developer-guide/)
+
+### Webcasts
+- [Azure Friday](https://azure.microsoft.com/resources/videos/azure-friday/)  
+Join Scott Hanselman every Friday as he engages one-to-one with the engineers who 
+build the services that power Microsoft Azure as they demo capabilities, 
+answer Scott’s questions and share their insights.
+
+### Links
+- [Official Azure Blog](https://azure.microsoft.com/blog/)  
+Great resource to get informed about all new services and feature announcements
+- [Official Azure Documentation](https://docs.microsoft.com/azure)  
+Extensive documentation about Azure services, SDKS/Tools, and architectural best-practices
+
+### Twitter
+We recommend the following Twitter handles to follow to be first to know if 
+something mind-boggling is happening in the Azure universe.
+- [Microsoft Azure](https://twitter.com/Azure)  
+The official account for Microsoft Account. Follow for news and updates from the #Azure team and community.
+- [Corey Sanders](https://twitter.com/CoreySandersWA)  
+ Director of Program Manager responsible for IaaS and Cloud Services. 
+ - [Mark Russinovich](https://twitter.com/markrussinovich)  
+ CTO of Microsoft Azure
+ - [Scott Guthrie](https://twitter.com/scottgu)  
+ Runs the Cloud & Enterprise division at Microsoft
