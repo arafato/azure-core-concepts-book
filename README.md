@@ -285,10 +285,24 @@ ARM vs ASM
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview
 
 ## Developer Tooling
+https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli
 TODO: Portal, CLIs, SDKs, IDEs and according configuration
 
+- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/)
+
 ## Open Source Ecosystem
-TODO
+This chapter is about third party OSS frameworks and libraries in the context of Azure.
+### Compute
+- [Serverless Frameork](https://serverless.com/)  
+The Serverless Framework allows you to deploy auto-scaling, pay-per-execution, event-driven functions to any cloud. 
+We currently support **Microsoft Azure**, AWS Lambda, Apache OpenWhisk, and are expanding to support other cloud providers.
+
+### Storage
+- [Azurite](https://github.com/arafato/azurite)  
+A lightweight server clone of Azure Blob Storage that simulates most of the
+commands supported by it with minimal dependencies. Written in NodeJS.
+- [S3Proxy](https://github.com/andrewgaul/s3proxy)  
+AWS S3 Proxy written in Java with support for Azure Blob Storage and many other storage backends.
 
 ## Learning Paths
 The following link points you to an overview listing all available learning paths we
