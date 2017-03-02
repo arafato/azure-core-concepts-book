@@ -301,19 +301,27 @@ Azure Resource Manager (ARM) is the recommended model for deploying and managing
 It is comprised of two parts:
 - A set of APIs (accessible via REST, CLI, SDKs, and the Portal) that you use to 
 provision and manage your resources. These APIs are offered by so-called **Resource-Providers**  
-- A deployment model allowing you to group your resource into so-called **resource-groups**, and hence manage them as a unit, and to declaratively specify them in so-called **ARM-Templates** 
+- A deployment model allowing you to group your resource into so-called **resource-groups**, and hence manage them as a unit, and to declaratively specify your resources in so-called **ARM-Templates** 
 
 Let's take a deeper look into the various aspects.
 
 #### Resource Provider
-Think of a resource provider as a service that exposes various APIs for you to create and manage different kinds of Azure resources such as VMs, storage accounts, networking, Stream Analytics jobs, etc. There are a lot different resource providers available, which you can query in the portal or with our new CLI as follows:
+Think of a resource provider as a service that exposes various APIs for you to create and manage different kinds of Azure resources such as VMs, storage accounts, networking, Stream Analytics jobs, etc. There are a lot of different resource providers available, which you can query in the portal or with our new CLI as follows:
 ```
 $ az provider list
 ```   
-You can find the according output [here](https://github.com/arafato/Azure-RampUp/blob/master/resources/azure-resource-providers.json) for your convenience (last updated March 2nd 2017).  
+You can find the according output [here](https://github.com/arafato/Azure-RampUp/blob/master/resources/azure-resource-providers.json) for your convenience (last updated March 2nd 2017).
+
+**Gotchas**
+>- Our CLIs and SDKs are configured to talk to the *Internation Cloud* environment 
+>by default. The above output thus lists only the resource providers available in
+>the regions of the **International Cloud**. See section 
+>[Developer Tooling](#developer-tooling) for how to configure them to use different
+>Azure environments.
+
 Resource providers are organized in namespaces such as `Microsoft.Compute`, `Microsoft.Storage`, or `Microsoft.StreamAnalytics`. We will use the term *namespace* and *resource provider* interchangeably. 
 
-So for example, looking at the namespace `Microsoft.Compute`, you can find multiple *resource types*, each listed with their available API versions and regions. A *resource type* represents an Azure resource such as a virtual machine, an availability set, a disk, or available locations. A resource type adheres to the following naming convention:  
+So for example, looking at the namespace `Microsoft.Compute`, you can find multiple *resource types*, each one listed with its available API versions and regions. A *resource type* represents an Azure resource such as a virtual machine, an availability set, a disk, or available locations. A resource type adheres to the following naming convention:  
 `<Namespace>.resourceType(/resourceType)*`  
 That is, resource types an also be nested. For example: `Microsoft.Compute.virtualMachineScaleSets/virtualMachines/networkInterfaces`
 
