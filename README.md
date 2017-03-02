@@ -111,7 +111,7 @@ are confused about all the different pieces and terminologies such as *Azure AD,
 Account Owner, Subscription Owner, Subscription Admin, Directory Admin, Co-Admin, RBAC* etc. 
 coming together. It doesn't help neither that
 terms are used inconsistently throughout the web, and that Azure has two different
-authentication models, depending on whether you are using ARM or ASM (see subsequent section). 
+authentication models, depending on whether you are using ARM or ASM (see section [Azure Resource Manager](#azure-resource-manager)). 
 We will focus on ARM which is the current model and the one you should use for every new project.
 
 So let's provide clarity.
