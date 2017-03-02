@@ -384,7 +384,7 @@ There are multiple ways to do that:
 - Visit [https://resources.azure.com](https://resources.azure.com) for an explorer that is similar to the one in the Azure portal, however, providing more features such as calling available REST APIs directly from the web interface  
 
 >*Gotcha*
->- The internal JSON representation of an Azure resource will usually include many more attributes than your original ARM-Template, since the internal representation is explicit. Many attributes have standard values that you often do not explicitly set or are only set and known at provision time such as internal domain suffixes of your network interface cards. 
+>- The internal JSON representation of an Azure resource will usually include many more attributes than your original ARM-Template, since the internal representation is explicit. Many attributes have standard values that you often do not explicitly set or are only set and known at provision time such as internal domain name suffixes of your network interface cards. 
 
 ##### Tool Support
 Writing complex infrastructure setups "by hand" is possible but sometimes people end up writing their own ARM-Template generation tools to speed up things. Up to now, these companies haven't yet released their frameworks and tools. If they do, we will post the according links here.
