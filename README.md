@@ -3,6 +3,8 @@ A curated guide to get going fast on the Azure platform.
 Links, best-practices, explanantions and comments, I wish I had known before 
 I started using Azure.
 
+**DRAFT VERSION 0.2** (still early stage, TOC is not final!)
+
 ## Table of Contents
 
 * [Fundamental Concepts](#fundamental-concepts)
