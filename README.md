@@ -290,11 +290,11 @@ Let's briefly look under the hood to better understand what's going on when an S
 
 The token can be acquired with a `POST` call to `https://login.windows.net/<tenantId>/oauth2/token`. The tenant id is your Azure AD tenant that is associated to your subscription, and where you have created a service principal. Think of `https://login.windows.net` as a landing page that forwards you to the correct identity provider depending on whether you are using a work or school account (re-directs you to your Azure AD tenant), or a Microsoft account (re-directs you the Microsoft consumer identity system).
 
- In our example we want a token that can be used to sign requests against the service management API of the **Internation Cloud** which is hosted at `https://management.core.windows.net`. We provide this information and our service principal credentials in the body of this request.
+ In our example we want a token that can be used to sign requests against the service management API of the **International Cloud** which is hosted at `https://management.core.windows.net`. We provide this information and our service principal credentials in the body of this request.
 
 After having acquired this token we can add it to the Authorization Header of our HTTP-request against the service management API. See section [Resource Provider](#resource-provider) for a more detailed discussion on how this API works.
 
-We recommend to take a look at this [easy to understand code example](https://github.com/arafato/funcy-azure/blob/master/lib/utils/ARMRest.js#L5-L36) (NodeJS) that walks the path we have just described on a high-level.
+We recommend to take a look at this [easy to understand code example](https://github.com/arafato/funcy-azure/blob/master/lib/utils/ARMRest.js#L5-L36) (NodeJS) that walks the path we have just outlined on a high-level.
 
 ### Azure Resource Manager
 Azure Resource Manager (ARM) is the recommended model for deploying and managing your applications on Azure. 
