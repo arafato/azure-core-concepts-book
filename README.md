@@ -224,7 +224,7 @@ an Azure AD Admin (Global Administrator role) and an Azure Subscription Admin (s
 An Azure Subscription Admin (can be both an *Administrator* type or *User* type) is an identity that has been assigned 
 an owner role on subscription level. 
 That means it has has full access to all Azure resources including the right to delegate access to others.
-Access Management in Azure is done via *Role-based Access Control (RBAC)* (see next section)
+Access Management in Azure is done via *Role-based Access Control (RBAC)* (see [next section](#role-based-access-control))
 which lets you assign appropriate roles to users, groups, and applications at different scopes
 such as subscription, resource groups, or a single subscription.
 
@@ -242,7 +242,7 @@ point of view both users do not differ except for their assigned roles and right
 Now what exactly is this RBAC, Owner, and Contributor role all about? Next!
 
 ##### Role-based Access Control
-Role.based Access Control (RBAC) is all about defining *what* your users are allowed to do.
+Role-based Access Control (RBAC) is all about defining *what* your users are allowed to do.
 For this purpose it provides built-in roles that you can use to assign to a user, groups, and
 applications.  
 Azure RBAC has three basic roles that apply to all resource types:
@@ -284,8 +284,9 @@ Once you have setup a service principal, you can use it to make calls to the Azu
 
 #### Authentication flow using service principals
 Let's briefly look under the hood to better understand what's going on when an SDK authenticates a call. The overall process looks as follows:
-1) We need to acquire an OAuth2 bearer token by authenticating ourselves against an identity provider such as Azure AD
-2) We use this bearer token to sign our requests to authenticate against the relying party which is the Azure Management API in our case
+
+1. We need to acquire an OAuth2 bearer token by authenticating ourselves against an identity provider such as Azure AD
+2. We use this bearer token to sign our requests to authenticate against the relying party which is the Azure Management API in our case
 
 The token can be acquired with a `POST` call to `https://login.windows.net/<tenantId>/oauth2/token`. The tenant id is your Azure AD tenant that is associated to your subscription, and where you have created a service principal. Think of `https://login.windows.net` as a landing page that forwards you to the correct identity provider depending on whether you are using a work or school account (re-directs you to your Azure AD tenant), or a Microsoft account (re-directs you the Microsoft consumer identity system).
 
