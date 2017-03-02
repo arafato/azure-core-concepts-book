@@ -312,7 +312,7 @@ $ az provider list
 ```   
 You can find the according output [here](https://github.com/arafato/Azure-RampUp/blob/master/resources/azure-resource-providers.json) for your convenience (last updated March 2nd 2017).
 
-**Gotchas**
+**Gotcha**
 >- Our CLIs and SDKs are configured to talk to the *Internation Cloud* environment 
 >by default. The above output thus lists only the resource providers available in
 >the regions of the **International Cloud**. See section 
