@@ -341,11 +341,18 @@ You will find the official Azure REST API reference here: [https://docs.microsof
 Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at that these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
 
 #### Resource Groups
-TODO
+A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
+
+Note, that you need to assing a location to a resource group. The individual resources within a resource group can, however, be deployed in different regions.
+
+Usually, it is recommended to group those resources together that have the same lifecycle (web application servers in one resource group, database servers in another). 
+
+You will find a more detailed discussion on this topics at [https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
+
+**Gotcha**
+>- The resource group stores metadata about the resources. Therefore, when you specify a location for the resource group, you are specifying where that metadata is stored. For compliance reasons, you may need to ensure that your data is stored in a particular region
 
 #### ARM Templates
-TODO
-
 
 
 ARM vs ASM
