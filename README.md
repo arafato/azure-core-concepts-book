@@ -373,9 +373,9 @@ A huge collection of example ARM-Templates that will help you get going fast. Ra
 Over 60 pages full of best-practices and design considerations
 
 ##### Round-Trip Engineering
-Sometimes you will hear that ARM-Templates support Round-Trip Engineering. This is true in that the internal representation of an Azure resource is equivalent to the ARM-Template definition. That means that both refer to the same JSON schemas which you can find at [https://github.com/Azure/azure-resource-manager-schemas](https://github.com/Azure/azure-resource-manager-schemas)
+Sometimes you will hear that ARM-Templates support Round-Trip Engineering. This is true in that the internal representation of an Azure resource refers to the same JSON schema as an ARM-Template. You will find the JSON schemas at [https://github.com/Azure/azure-resource-manager-schemas](https://github.com/Azure/azure-resource-manager-schemas)
 
-That means that you can look at the JSON description of already deployed resources, copy / adapt them to your ARM-Templates, re-deploy, and repeat if needed. Just how can you look at the JSON description of already deployed resources?
+So in essence this enables you to look at the JSON description of already deployed resources, copy / adapt them to your ARM-Templates, re-deploy, and repeat if needed. Just how can you look at the JSON description of already provisioned resources?
 There are multiple ways to do that:
 - In the Azure portal you can export the JSON representation of an entire resource group. You'll find that button in the according resource group blade under `Settings - Automation Script`
 
