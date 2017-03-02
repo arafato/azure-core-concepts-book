@@ -10,7 +10,7 @@ I started using Azure.
     * [Environments](#environments)
     * [Regions](#regions)
     * [Authentication and Authorization](#authentication-and-authorization)
-    * [ARM Deployment Model](#arm-deployment-model)
+    * [Azure Resource Managerl](#azure-resource-manager)
 * [Developer Tooling](#developer-tooling)
 * [Open-Source Ecosystem](#open-source-ecosystem)
 * [Learning Paths](#learning-paths)
@@ -262,7 +262,8 @@ Note, however, that custom roles are currently supported only via [Powershell](h
 the [Azure CLI](https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-azure-cli),
 and the [REST API](https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-rest).
 
-Now let's talk about **Groups** and **Group Owners**.  
+Now let's talk about **Groups** and **Group Owners**.
+
 A group in the RBAC-context provide a means to group users, and let them utilize the privileged access it grants.
 From a conceptual point of view, they are really similiar to GNU/Linux groups for access control. 
 What is interesting is, that you can assign a so-called **Group Owner** to a particular group. 
@@ -280,7 +281,59 @@ to learn more about this topic, and to learn how to set up a service principal.
 - [Application and service principal objects in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-application-objects)
 - [Use portal to create Active Directory application and service principal that can access resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authenticate-service-principal)
 
-### ARM Deployment Model
+Once you have setup a service principal, you can use it to make calls to the Azure APIs (see section [Resource Provider](#resource-provider) for details what we mean by the term *Azure APIs*) from a script or an application, for example. Our SDKs will do much of the heavy lifting regarding authentication, token handling, and so on. See next chapter to learn what's really going on under the hood. 
+
+#### Authentication flow using service principals
+Let's briefly look under the hood to better understand what's going on when an SDK authenticates a call. The overall process looks as follows:
+1) We need to acquire an OAuth2 bearer token by authenticating ourselves against an identity provider such as Azure AD
+2) We use this bearer token to sign our requests to authenticate against the relying party which is the Azure Management API in our case
+
+The token can be acquired with a `POST` call to `https://login.windows.net/<tenantId>/oauth2/token`. The tenant id is your Azure AD tenant that is associated to your subscription, and where you have created a service principal. Think of `https://login.windows.net` as a landing page that forwards you to the correct identity provider depending on whether you are using a work or school account (re-directs you to your Azure AD tenant), or a Microsoft account (re-directs you the Microsoft consumer identity system).
+
+ In our example we want a token that can be used to sign requests against the service management API of the **Internation Cloud** which is hosted at `https://management.core.windows.net`. We provide this information and our service principal credentials in the body of this request.
+
+After having acquired this token we can add it to the Authorization Header of our HTTP-request against the service management API. See section [Resource Provider](#resource-provider) for a more detailed discussion on how this API works.
+
+We recommend to take a look at this [easy to understand code example](https://github.com/arafato/funcy-azure/blob/master/lib/utils/ARMRest.js#L5-L36) (NodeJS) that walks the path we have just described on a high-level.
+
+### Azure Resource Manager
+Azure Resource Manager (ARM) is the recommended model for deploying and managing your applications on Azure. 
+It is comprised of two parts:
+- A set of APIs (accessible via REST, CLI, SDKs, and the Portal) that you use to 
+provision and manage your resources. These APIs are offered by so-called **Resource-Providers**  
+- A deployment model allowing you to group your resource into so-called **resource-groups**, and hence manage them as a unit, and to declaratively specify them in so-called **ARM-Templates** 
+
+Let's take a deeper look into the various aspects.
+
+#### Resource Provider
+Think of a resource provider as a service that exposes various APIs for you to create and manage different kinds of Azure resources such as VMs, storage accounts, networking, Stream Analytics jobs, etc. There are a lot different resource providers available, which you can query in the portal or with our new CLI as follows:
+```
+$ az provider list
+```   
+You can find the according output [here](https://github.com/arafato/Azure-RampUp/blob/master/resources/azure-resource-providers.json) for your convenience (last updated March 2nd 2017).  
+Resource providers are organized in namespaces such as `Microsoft.Compute`, `Microsoft.Storage`, or `Microsoft.StreamAnalytics`. We will use the term *namespace* and *resource provider* interchangeably. 
+
+So for example, looking at the namespace `Microsoft.Compute`, you can find multiple *resource types*, each listed with their available API versions and regions. A *resource type* represents an Azure resource such as a virtual machine, an availability set, a disk, or available locations. A resource type adheres to the following naming convention:  
+`<Namespace>.resourceType(/resourceType)*`  
+That is, resource types an also be nested. For example: `Microsoft.Compute.virtualMachineScaleSets/virtualMachines/networkInterfaces`
+
+provides you an interface to the network interfaces of virtual machines within a scale set.
+
+Each of these resource types provide their own set of REST-full operations and APIs. Depending on the Azure environment (see section [Environments](#environments)) you are using, the management endpoint that hosts these APIs is different. 
+The resource provider APIs of the **Internation Cloud** are hosted at [https://management.core.windows.net](https://management.core.windows.net), the APIs of the **German Cloud** are hosted at [https://management.core.cloudapi.de/](https://management.core.cloudapi.de/), for example.
+
+You will find the official Azure REST API reference here: [https://docs.microsoft.com/en-us/rest/api/](https://docs.microsoft.com/en-us/rest/api/)
+
+Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at that these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
+
+#### Resource Groups
+TODO
+
+#### ARM Templates
+TODO
+
+
+
 ARM vs ASM
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview
 
@@ -309,8 +362,7 @@ The following link points you to an overview listing all available learning path
 are currently offering for the Azure platform.
 Use these learning paths to guide yourself through the documentation for our services so you can start to build effective cloud applications on Azure.  
 
-These learning paths do not encompass all of our services currently available. For many use-cases, however, 
-we think that the most relevant are covered. 
+These learning paths do not encompass all of our services currently available. For many use-cases, however, we think that the most relevant are covered. 
 
 [https://azure.microsoft.com/documentation/learning-paths/](https://azure.microsoft.com/documentation/learning-paths/)
 
