@@ -10,7 +10,7 @@ I started using Azure.
     * [Environments](#environments)
     * [Regions](#regions)
     * [Authentication and Authorization](#authentication-and-authorization)
-    * [Azure Resource Managerl](#azure-resource-manager)
+    * [Azure Resource Manager](#azure-resource-manager)
 * [Developer Tooling](#developer-tooling)
 * [Open-Source Ecosystem](#open-source-ecosystem)
 * [Learning Paths](#learning-paths)
