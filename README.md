@@ -152,7 +152,7 @@ Each Azure AD tenant is distinct and separate from other Azure AD tenants.
 
 An Azure AD tenant has always the following domain assigned **.onmicrosoft.com.* For example, 
 if you sign up with your MS consumer account *joe.doe@outlook.com* and Azure AD tenant is 
-automatically created for you similiar to *joedoeoutlook.onmicrosoft.com*.
+automatically created for you similiar to *joedoeoutlook.onmicrosoft.com*. A user *Lilli* created in this directory would be referred to as *lilli@joedoeoutlook.onmicrosoft.com*. Of yourse, if you have your own domain, you can create a CNAME to joedoeoutlook.onmicrosoft.com so that users do not need to use these ackward-looking user-name accounts.
 
 A tenant houses the users in a company and the information about them - their passwords, 
 user profile data, permissions, and so on. It also contains groups, applications, 
