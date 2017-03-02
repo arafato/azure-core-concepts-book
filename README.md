@@ -386,6 +386,13 @@ There are multiple ways to do that:
 >*Gotcha*
 >- The internal JSON representation of an Azure resource will usually include many more attributes than your original ARM-Template, since the internal representation is explicit. Many attributes have standard values or are only set and known at provision time such as resource identifiers. 
 
+##### Tool Support
+Writing complex infrastructure setups "by hand" is possible but sometimes people end up writing their own ARM-Template generation tools to speed up things. Up to now, these companies haven't yet released their frameworks and tools. If they do, we will post the according links here.
+
+There is, however, already intellisense support for a wider range of different editors. We will look at them in section [Developer Tooling](#developer-tooling).
+
+Also there is a [free and commercial plugin](http://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) available for Visual Studio made by a German-based company [Tangible Engineering](http://www.tangible-engineering.com) that allows you to derive your ARM-Templates from a graphical model.
+
 ## Developer Tooling
 https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli
 TODO: Portal, CLIs, SDKs, IDEs and according configuration
