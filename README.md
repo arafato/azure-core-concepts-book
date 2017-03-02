@@ -158,11 +158,11 @@ A tenant houses the users in a company and the information about them - their pa
 user profile data, permissions, and so on. It also contains groups, applications, 
 and other information pertaining to an organization and its security.
 
-There are two types of accounts you can use to sign in: a Microsoft account 
-(formerly known as Microsoft Live ID) and a work or school account, which is an 
+There are two types of accounts you can use to sign in: a **Microsoft account** 
+(formerly known as Microsoft Live ID) and a **work or school account**, which is an 
 account stored in Azure AD. There is a federation relationship between between
 Azure AD and the Microsoft account consumer identity system. As a result, Azure AD is
-able to authenticate "guest" Microsoft accounts as well as "native" Azure AD accounts.
+able to authenticate "guest" Microsoft accounts as well as "native" Azure AD accounts, assuming that the Azure AD tenant is living in the International Cloud.
 
 ##### Gotchas
 >- Account Overlap: It is not possible anymore to create a new personal Microsoft 
@@ -185,15 +185,17 @@ associate another subscription with that directory and continue to manage the
 directory users.
 
 Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory) for a more detailed discussion.
-#### Understanding User and Roles Management
-First, let's define the terminology and roles because this often leads to confusion.
+#### Understanding User and Role Management
+First, let's define the terminology because this often leads to confusion.
 Generally speaking, an indentity in Azure AD can be of two types: *Administrator* and *User*.
-An *Administrator* can manage properties in Azure AD such as creating users, while a *User* 
-can only manage Azure resources such as VMs or Storage (depending on the according access rights). 
 
-When we talk about administrators in the context of Azure, however, we usually 
+A *User* can only manage Azure resources such as VMs or Storage (depending on the according access rights). He is not allowed to change any Azure AD properties. 
+
+An *Administrator* can manage properties in Azure AD such as creating, deleting, and modifying users, while 
+
+When we talk about administrators in the context of Azure we usually 
 do not refer to this *Administrator* type. Instead, people are usually using the
-notion of *Azure Active Directory Admin* and *Azure Subscription Admin*.
+notion of *Azure Active Directory Admin* and *Azure Subscription Admin*. Both are, however, two separate concepts.
 
 Let's examine both of them in more detail.
 
@@ -217,8 +219,7 @@ The ones that are usually relevant in the context of Azure are
 - User account administrator
  
 Typically, the account you are using for the initial sign up for an Azure account, is both
-an Azure AD Admin (Global Administrator role) and an Azure Subscription Admin (see next section). But again, 
-this is not required.
+an Azure AD Admin (Global Administrator role) and an Azure Subscription Admin (see next section). But again, this is not required.
 
 **Azure Subscription Admin**   
 An Azure Subscription Admin (can be both an *Administrator* type or *User* type) is an identity that has been assigned 
