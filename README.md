@@ -133,15 +133,14 @@ The one that is based on Azure AD (authentication) and RBAC (authorization) whic
 thoroughly discuss in the subsequent sections, and one that is based on *Shared Keys*.
 
 Every operation on the **Control Plane** needs to be authenticated against Azure AD. Every operation. Period.
-However, not every operation against the **Data Plane** needs to also be authenticated against Azure AD. Some
+Not every operation against the **Data Plane**, however, needs to be also authenticated against Azure AD. Some
 services such as [Azure Storage Service](https://docs.microsoft.com/azure/storage/storage-introduction),
 [Service Bus](https://docs.microsoft.com/azure/service-bus/), and [Event Hubs](https://docs.microsoft.com/azure/event-hubs/) rely on so-called *Shared Keys*. 
 
 So if you want to provision a Storage Account you will need to authenticate against Azure AD.
-In order to read and write data from it (which are operations on the data plane) you are using shared keys. 
+In order to read and write data from it (which are operations on the data plane) you are using *Shared Keys*. For a more detailed discussion on this topic with a string focus on Azure Storage, we recommend the following link: [https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1](https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1)
 
-Most service on Azure, however, rely on Azure AD and RBAC for managing the Control Plane 
-*and* the Data Plane.
+Most service on Azure, however, rely on Azure AD and RBAC for managing the Control Plane *and* the Data Plane.
 
 #### Azure Active Directory
 Azure Active Directory (Azure AD) is Microsoft’s multi-tenant cloud based directory 
