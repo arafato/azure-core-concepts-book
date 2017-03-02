@@ -293,9 +293,9 @@ TODO: Portal, CLIs, SDKs, IDEs and according configuration
 ## Open Source Ecosystem
 This chapter is about third party OSS frameworks and libraries in the context of Azure.
 ### Compute
-- [Serverless Frameork](https://serverless.com/)  
+- [Serverless Framework](https://serverless.com/)  
 The Serverless Framework allows you to deploy auto-scaling, pay-per-execution, event-driven functions to any cloud. 
-We currently support **Microsoft Azure**, AWS Lambda, Apache OpenWhisk, and are expanding to support other cloud providers.
+It currently supports **Microsoft Azure**, AWS Lambda, Apache OpenWhisk, and is expanding to support other cloud providers.
 
 ### Storage
 - [Azurite](https://github.com/arafato/azurite)  
@@ -330,6 +330,12 @@ answer Scott’s questions and share their insights.
 Great resource to get informed about all new services and feature announcements
 - [Official Azure Documentation](https://docs.microsoft.com/azure)  
 Extensive documentation about Azure services, SDKS/Tools, and architectural best-practices
+- [Azure Whitepapers by David Chappell](http://www.davidchappell.com/writing/white_papers.php)  
+Great high-level and conceptual explanations of Azure-related services and technologies by David Chappell
+- [Official Microsoft Azure Github Repository](https://github.com/Azure)
+APIs, SDKs and open source projects from Microsoft Azure (350+ projects) 
+- [Azure Networking and ARM FAQ by Igor Pagliai](https://blogs.msdn.microsoft.com/igorpag/2016/07/24/my-personal-azure-faq-on-azure-networking-and-arm/)  
+A little bit outdated but still relevant and highly informative FAQ that goes really deep on Networking and ARM topics
 
 ### Twitter
 We recommend the following Twitter handles to follow to be first to know if 
