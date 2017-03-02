@@ -353,10 +353,35 @@ You will find a more detailed discussion on this topic at [https://docs.microsof
 >- The resource group stores metadata about the resources. Therefore, when you specify a location for the resource group, you are specifying where that metadata is stored. For compliance reasons, you may need to ensure that your data is stored in a particular region
 
 #### ARM Templates
+An ARM-Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to a resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly in a so-called *declarative syntax* meaning "Here is what I intend to create". This frees you to think about the sequence of programming commands you have to use.
 
+Using ARM-Templates to provision your resources is the recommended way, and defintely a best-practice. 
 
-ARM vs ASM
-https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview
+ARM-Templates also provide the possibility to use [numeric and string functions](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-functions) increasing their expressiveness, and also a means to split them into smaller units through so-called [Linked Templates](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-linked-templates).
+
+We recommend the following links to learn more about how to author them, what to consider, and making them world-class ARM-Templates.
+- [Authoring Azure Resource Manager templates](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates)  
+A gentle introduction to the structure of ARM-Templates
+
+- [Resource Manager template walkthrough](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-template-walkthrough)  
+An end-to-end walkthrough based on a real example  
+
+- [Azure Quickstart ARM-Templates](https://github.com/Azure/azure-quickstart-templates)  
+A huge collection of example ARM-Templates that will help you get going fast. Ranging from simple Linux or Windows based VMs, to complex Elastic Search, Cassandra, and Zookeeper setups. 
+
+- [Free Ebook: World-class ARM-Templates - Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World%20Class%20ARM%20Templates%20-%20Considerations%20and%20Proven%20Practices.pdf)   
+Over 60 pages full of best-practices and design considerations
+
+##### Round-Trip Engineering
+Sometimes you will hear that ARM-Templates support Round-Trip Engineering. This is true in that the internal representation of an Azure resource is equivalent to the ARM-Template definition. That means that both refer to the same JSON schemas which you can find at [https://github.com/Azure/azure-resource-manager-schemas](https://github.com/Azure/azure-resource-manager-schemas)
+
+That means that you can look at the JSON description of already deployed resources, copy / adapt them to your ARM-Templates, re-deploy, and repeat if needed. Just how can you look at the JSON description of already deployed resources?
+There are multiple ways to do that:
+- In the Azure portal you can export the JSON representation of an entire resource group. You'll find that button in the according resource group blade under `Settings - Automation Script`
+
+- In the Azure portal search for `Resource Explorer` under `More Services`
+
+- Visit [resources.azure.com](resources.azure.com) for an explorer that is similar to the one in the Azure portal, however, providing more features such as calling available REST APIs directly from the web interface  
 
 ## Developer Tooling
 https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli
