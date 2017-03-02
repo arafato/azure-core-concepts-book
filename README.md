@@ -140,13 +140,13 @@ services such as [Azure Storage Service](https://docs.microsoft.com/azure/storag
 So if you want to provision a Storage Account you will need to authenticate against Azure AD.
 In order to read and write data from it (which are operations on the data plane) you are using *Shared Keys*. For a more detailed discussion on this topic with a strong focus on Azure Storage, we recommend the following link: [https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1](https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1)
 
-Most service on Azure, however, rely on Azure AD and RBAC for managing the Control Plane *and* the Data Plane.
+Most services on Azure, however, rely on Azure AD and RBAC for managing the Control Plane *and* the Data Plane.
 
 #### Azure Active Directory
 Azure Active Directory (Azure AD) is Microsoft’s multi-tenant cloud based directory 
 and identity management service (see [https://docs.microsoft.com/azure/active-directory/active-directory-whatis](https://docs.microsoft.com/azure/active-directory/active-directory-whatis)).
 In Azure AD, a tenant is representative of an organization. It is a dedicated instance 
-of the Azure AD service that an organization receives and owns when it signs up for a 
+of the multi-tenant Azure AD service that an organization receives and owns when it signs up for a 
 Microsoft cloud service such as Azure, Microsoft Intune, or Office 365. 
 Each Azure AD tenant is distinct and separate from other Azure AD tenants.
 
