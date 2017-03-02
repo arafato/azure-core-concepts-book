@@ -189,9 +189,9 @@ Please see [https://docs.microsoft.com/en-us/azure/active-directory/active-direc
 First, let's define the terminology because this often leads to confusion.
 Generally speaking, an indentity in Azure AD can be of two types: *Administrator* and *User*.
 
-A *User* can only manage Azure resources such as VMs or Storage (depending on the according access rights). He is not allowed to change any Azure AD properties. 
+A *User* can only manage Azure resources such as VMs or Storage depending on the according access rights he has been granted through [RBAC](#role-based-access-control). He is not allowed to change any Azure AD properties. 
 
-An *Administrator* can manage properties in Azure AD such as creating, deleting, and modifying users, while 
+An *Administrator* can manage properties in Azure AD such as creating, deleting, and modifying users, and also - depending on his granted access rights through [RBAC](#role-based-access-control) - manage Azure resources.
 
 When we talk about administrators in the context of Azure we usually 
 do not refer to this *Administrator* type. Instead, people are usually using the
@@ -202,8 +202,7 @@ Let's examine both of them in more detail.
 **Azure Active Directory Admin**  
 Also known as *Account Admin* an Azure AD admin (*Administrator* type) can manage properties in the Azure AD like performing 
 directory administration tasks using tools such as Azure AD PowerShell or 
-Office 365 Admin Center. They have not necessarily access to the associated subscriptions.
-It is possible but this isn’t required.
+Office 365 Admin Center. They have not necessarily access to the associated subscriptions. It is possible but this isn’t required.
 
 An Azure AD Admin is always assigned a specific administrator role. To have access to all 
 administrative features of Azure AD, an administrator needs to be assigned the so-called
@@ -242,8 +241,8 @@ point of view both users do not differ except for their assigned roles and right
 
 Now what exactly is this RBAC, Owner, and Contributor role all about? Next!
 
-##### Role-based Access Control (RBAC)
-RBAC is all about defining *what* your users are allowed to do.
+##### Role-based Access Control
+Role.based Access Control (RBAC) is all about defining *what* your users are allowed to do.
 For this purpose it provides built-in roles that you can use to assign to a user, groups, and
 applications.  
 Azure RBAC has three basic roles that apply to all resource types:
