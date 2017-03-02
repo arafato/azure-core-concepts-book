@@ -321,14 +321,20 @@ You can find the according output [here](https://github.com/arafato/Azure-RampUp
 
 Resource providers are organized in namespaces such as `Microsoft.Compute`, `Microsoft.Storage`, or `Microsoft.StreamAnalytics`. We will use the term *namespace* and *resource provider* interchangeably. 
 
-So for example, looking at the namespace `Microsoft.Compute`, you can find multiple *resource types*, each one listed with its available API versions and regions. A *resource type* represents an Azure resource such as a virtual machine, an availability set, a disk, or available locations. A resource type adheres to the following naming convention:  
-`<Namespace>.resourceType(/resourceType)*`  
-That is, resource types an also be nested. For example: `Microsoft.Compute.virtualMachineScaleSets/virtualMachines/networkInterfaces`
+So for example, looking at the namespace `Microsoft.Compute`, you can find multiple *resource types*, each one listed with its available API versions and regions. A *resource type* represents an Azure resource such as a virtual machine, an availability set, a disk, or available locations. A resource type adheres to the following naming convention:
 
-provides you an interface to the network interfaces of virtual machines within a scale set.
+`<Namespace>.resourceType(/resourceType)*`  
+
+That means resource types can be nested. For example: `Microsoft.Compute.virtualMachineScaleSets/virtualMachines/networkInterfaces`
+
+This denotes the resource type of a network interfaces of virtual machines within a scale set.
 
 Each of these resource types provide their own set of REST-full operations and APIs. Depending on the Azure environment (see section [Environments](#environments)) you are using, the management endpoint that hosts these APIs is different. 
-The resource provider APIs of the **Internation Cloud** are hosted at [https://management.core.windows.net](https://management.core.windows.net), the APIs of the **German Cloud** are hosted at [https://management.core.cloudapi.de/](https://management.core.cloudapi.de/), for example.
+For instance, the resource provider APIs of the **Internation Cloud** are hosted at `https://management.azure.com`, the APIs of the **German Cloud** are hosted at `https://management.microsoftazure.de`).
+
+Example: In order to talk to the REST API of a virtual machine named `myVM` in the resource group `myrg` in subscription `8d4dee44-4b28-4e05-9927-3a5d34a42bf5` in the **Internation Cloud** you would call
+
+`https://management.azure.com/subscriptions/8d4dee44-4b28-4e05-9927-3a5d34a42bf5/resourceGroups/myrg/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2016-03-01`
 
 You will find the official Azure REST API reference here: [https://docs.microsoft.com/en-us/rest/api/](https://docs.microsoft.com/en-us/rest/api/)
 
