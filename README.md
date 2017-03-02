@@ -381,7 +381,7 @@ There are multiple ways to do that:
 
 - In the Azure portal search for `Resource Explorer` under `More Services`
 
-- Visit [resources.azure.com](resources.azure.com) for an explorer that is similar to the one in the Azure portal, however, providing more features such as calling available REST APIs directly from the web interface  
+- Visit [https://resources.azure.com](https://resources.azure.com) for an explorer that is similar to the one in the Azure portal, however, providing more features such as calling available REST APIs directly from the web interface  
 
 >*Gotcha*
 >- The internal JSON representation of an Azure resource will usually include many more attributes than your original ARM-Template, since the internal representation is explicit. Many attributes have standard values or are only set and known at provision time such as resource identifiers. 
