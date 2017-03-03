@@ -17,6 +17,11 @@ I started using Azure.
 * [Open-Source Ecosystem](#open-source-ecosystem)
 * [Learning Paths](#learning-paths)
 * [Free Resources](#free-resources)
+    * [Free eBooks](#free-ebooks)
+    * [Webcasts](#webcasts)
+    * [Official Whitepapers](#whitepapers)
+    * [Recommended Links](#links)
+    * [Twitter](twitter)
 
 ## Fundamental Concepts
 This chapter is about the the foundational building blocks of the Azure platform. 
@@ -452,7 +457,7 @@ Great resource to get informed about all new services and feature announcements
 Extensive documentation about Azure services, SDKS/Tools, and architectural best-practices
 - [Azure Whitepapers by David Chappell](http://www.davidchappell.com/writing/white_papers.php)  
 Great high-level and conceptual explanations of Azure-related services and technologies by David Chappell
-- [Official Microsoft Azure Github Repository](https://github.com/Azure)
+- [Official Microsoft Azure Github Repository](https://github.com/Azure)  
 APIs, SDKs and open source projects from Microsoft Azure (350+ projects) 
 - [Azure Networking and ARM FAQ by Igor Pagliai](https://blogs.msdn.microsoft.com/igorpag/2016/07/24/my-personal-azure-faq-on-azure-networking-and-arm/)  
 A little bit outdated but still relevant and highly informative FAQ that goes really deep on Networking and ARM topics
