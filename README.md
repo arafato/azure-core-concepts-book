@@ -21,7 +21,7 @@ I started using Azure.
     * [Webcasts](#webcasts)
     * [Official Whitepapers](#whitepapers)
     * [Recommended Links](#links)
-    * [Twitter](twitter)
+    * [Twitter](#twitter)
 
 ## Fundamental Concepts
 This chapter is about the the foundational building blocks of the Azure platform. 
