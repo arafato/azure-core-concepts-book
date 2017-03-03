@@ -435,6 +435,16 @@ Join Scott Hanselman every Friday as he engages one-to-one with the engineers wh
 build the services that power Microsoft Azure as they demo capabilities, 
 answer Scott’s questions and share their insights.
 
+### Whitepapers
+- [Securing the Microsoft Cloud](http://download.microsoft.com/download/D/5/E/D5E0E59E-B8BC-4D08-B222-8BE36B233508/Securing_Microsoft_Cloud_Strategy_Brief_.pdf)
+- [Azure Security, Privacy, and Compliance](http://download.microsoft.com/download/1/6/0/160216AA-8445-480B-B60F-5C8EC8067FCA/WindowsAzure-SecurityPrivacyCompliance.pdf)
+- [Security Management in Microsoft Azure](http://download.microsoft.com/download/7/0/E/70E3858E-8764-4233-A00F-49A3C6C3143C/Security_Management_in_Microsoft_Azure-11062014.pdf)
+- [Cloud Operations Excellence and Reliability Strategy Paper](http://download.microsoft.com/download/C/5/5/C55C7170-9AA0-4187-9A78-C5AE85C8161D/Cloud_Infrastructure_Operational_Excellence_and_Reliability_Strategy_Brief.pdf)
+- [Leveraging Stored Energy for Handling Power Emergencies](http://download.microsoft.com/download/3/1/9/319FE711-93A7-462D-9681-DB7F2E5875CC/Leveraging_Stored_Energy_for_Handling_Power_Emergencies_White_Paper.pdf)
+- [Resilience by Design for Cloud Services](http://download.microsoft.com/download/7/8/7/78716493-0876-4CDF-8595-F5EEE13FD0E1/Resilience_by_Design_for_Cloud_Services_Strategy_Brief.pdf)
+- [Information Security Management](http://download.microsoft.com/download/A/0/3/A03FD8F0-6106-4E64-BB26-13C87203A763/Information_Security_Management_System_for_Microsofts_Cloud_Infrastructure.pdf)
+- [Where and How your Data is Stored](https://www.microsoft.com/en-us/trustcenter/about/transparency)
+
 ### Links
 - [Official Azure Blog](https://azure.microsoft.com/blog/)  
 Great resource to get informed about all new services and feature announcements
