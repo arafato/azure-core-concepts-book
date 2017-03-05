@@ -439,6 +439,8 @@ These learning paths do not encompass all of our services currently available. F
 Join Scott Hanselman every Friday as he engages one-to-one with the engineers who 
 build the services that power Microsoft Azure as they demo capabilities, 
 answer Scott’s questions and share their insights.
+- [Microsoft Virtual Academy - Azure Courses](https://mva.microsoft.com/training-topics/cloud-app-development#!index=2&prod=Microsoft%20Azure&jobf=Developer$IT%20Professional&lang=1033)  
+Free Microsoft Azure trainings delivered by experts, ranging from our IaaS to PaaS Offerings such as App Service, Azure Search, Nano-Services with Azure Functions, and Microservice with Docker on Azure Container Service. 
 
 ### Whitepapers
 - [Securing the Microsoft Cloud](http://download.microsoft.com/download/D/5/E/D5E0E59E-B8BC-4D08-B222-8BE36B233508/Securing_Microsoft_Cloud_Strategy_Brief_.pdf)
