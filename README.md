@@ -467,7 +467,7 @@ These learning paths do not encompass all of our services currently available. F
 A comprehensive and curated list of free Azure-related eBooks. 
 A big thank you goes out to [Holger Sirtl](https://twitter.com/hsirtl) who maintains this site.
 - [Überblick über Microsoft Azure (German only)](http://aka.ms/azureoverview)  
-A great resource to get an overview about our broad service offering by [Holger Sirtl], including Analytics, IoT, Security, Networking, DevOps, Storage, Web Applications, and Media Services. Written by [Holger Sirtl](https://twitter.com/hsirtl).  
+A great resource to get an overview about our broad service offering by [Holger Sirtl](https://twitter.com/hsirtl), including Analytics, IoT, Security, Networking, DevOps, Storage, Web Applications, and Media Services.  
 
 ### Webcasts
 - [Azure Friday](https://azure.microsoft.com/resources/videos/azure-friday/)  
