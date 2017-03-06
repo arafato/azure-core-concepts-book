@@ -406,6 +406,18 @@ TODO: Portal, CLIs, SDKs, IDEs and according configuration
 
 - [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/)
 
+## Infrastructure as a Service (IaaS)
+TODO: VMs, Storage, VNET, Availability Set, Managed Disks
+
+## Platform as a Service (PaaS)
+TODO: App Service 
+
+>**Gotcha**  
+>https://blogs.msdn.microsoft.com/benjaminperkins/2016/03/02/how-to-find-you-outgoing-azure-app-service-ip-address/
+
+## Software as a Service (SaaS)
+TODO: Azure Marketplace
+
 ## Open Source Ecosystem
 This chapter is about third party OSS frameworks and libraries in the context of Azure.
 ### Compute
