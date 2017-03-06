@@ -47,7 +47,7 @@ need every day when working with Microsoft Azure.
 ### Environments
 Azure is comprised of currently four different so-called *environments* that are strictly isolated from each other. 
 *Strictly isolated* means:
-- They are operated and managed through different endpoints (same API interfaces, though)
+- They are operated and managed through [different endpoints]((https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json)) (same API interfaces, though)
 - Their authentification mechanisms (Azure Active Directory) do not have a trust-relationship with each other. Thus, environments 
 do not provide a single sign-on experience amongst each other  
 - They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against the different management and service endpoints
@@ -110,7 +110,8 @@ Trial Registration Form: [https://azuregov.microsoft.com/trial/azuregovtrial](ht
 Endpoints: `$ az cloud list --query "[?name == 'AzureUSGovernment'].endpoints"`
 
 
-Please see section [Developer Tooling](#developer-tooling) for information on how to install the Python-based Azure-CLI tool `az`.
+Please see section [Developer Tooling](#developer-tooling) for information on how to install our new [Python-based Azure-CLI](https://docs.microsoft.com/cli/azure/) `az`.   
+For your convenience, you'll find the list of all [Azure Environment Endpoints]((https://github.com/arafato/Azure-RampUp/blob/master/resources/azure-resource-providers.json)) right here.
 
 ### Regions
 The Azure platform is currently comprised of 34 regions world-wide.
