@@ -309,7 +309,7 @@ Let's briefly look under the hood to better understand what's going on when an S
 1. We need to acquire an OAuth2 bearer token by authenticating ourselves against an identity provider such as Azure AD
 2. We use this bearer token to sign our requests to authenticate against the relying party which is the Azure Management API in our case
 
-The example assumes we are using the Internation Cloud. The use of another Azure cloud environment requires you to use the according endpoints of that respective environments.
+The example assumes we are using the Internation Cloud. The use of another Azure cloud environment requires you to use the according endpoints of that respective environment. See section [Environments](#environments) for how to get them with our [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/overview).
 
  The JSON Web Token (JWT) can be acquired with a `POST` call to `https://login.windows.net/<tenantId>/oauth2/token`. The tenant id is your Azure AD tenant that is associated to your subscription, and where you have created a service principal. Think of `https://login.windows.net` as a landing page that forwards you to the correct identity provider depending on whether you are using a work or school account (re-directs you to your Azure AD tenant), or a Microsoft account (re-directs you the Microsoft consumer identity system).
 
