@@ -461,6 +461,10 @@ Great high-level and conceptual explanations of Azure-related services and techn
 APIs, SDKs and open source projects from Microsoft Azure (350+ projects) 
 - [Azure Networking and ARM FAQ by Igor Pagliai](https://blogs.msdn.microsoft.com/igorpag/2016/07/24/my-personal-azure-faq-on-azure-networking-and-arm/)  
 A little bit outdated but still relevant and highly informative FAQ that goes really deep on Networking and ARM topics
+- [A curated list of Azure Bookmarks](https://blogs.technet.microsoft.com/tangent_thoughts/2016/02/04/bookmark-this-aka-msazureshortcuts/)  
+Links to follow-up Azure articles ranging from topics such as App Service Environments, 
+Availability Best-Practices, Blobs, Data Lake Store, all the way up to Security, Trainigs,  
+VNETs and WebHooks.
 
 ### Twitter
 We recommend the following Twitter handles to follow to be first to know if 
