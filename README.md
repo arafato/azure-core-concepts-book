@@ -75,6 +75,8 @@ Sign Up: [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/)
 
 Portal: [https://portal.microsoft.com](https://portal.microsoft.com) 
 
+Endpoints: `$ az cloud list --query "[?name == 'AzureCloud'].endpoints"`
+
 #### Azure German Cloud
 Also known as *Microsoft Cloud Deutschland*. Comprised of 2 regions, one located in 
 Frankfurt, the other one in Magdeburg. Operated by T-Systems International GmbH, a 
@@ -88,6 +90,8 @@ Sign Up: [https://azure.microsoft.com/free/germany/](https://azure.microsoft.com
 
 Portal: [https://portal.microsoftazure.de](https://portal.microsoftazure.de)
 
+Endpoints: `$ az cloud list --query "[?name == 'AzureGermanCloud'].endpoints"`
+
 #### Azure China Cloud
 Azure China Cloud is available through a unique partnership between Microsoft and 21Vianet, one of the country’s largest Internet providers.
 
@@ -95,11 +99,18 @@ Sign Up: [https://www.windowsazure.cn](https://www.windowsazure.cn)
 
 Portal: [https://portal.azure.cn/](https://portal.azure.cn/)
 
+Endpoints: `$ az cloud list --query "[?name == 'AzureChinaCloud'].endpoints"`
+
 #### Azure Gov Cloud
 Also known as *Microsoft Azure Government Cloud*. Comprised of 4 regions in USA. No public registration.
 More information at [https://azure.microsoft.com/overview/clouds/government/](https://azure.microsoft.com/overview/clouds/government/) 
 
 Trial Registration Form: [https://azuregov.microsoft.com/trial/azuregovtrial](https://azuregov.microsoft.com/trial/azuregovtrial)
+
+Endpoints: `$ az cloud list --query "[?name == 'AzureUSGovernment'].endpoints"`
+
+
+Please see section [Developer Tooling](#developer-tooling) for information on how to install the Python-based Azure-CLI tool `az`.
 
 ### Regions
 The Azure platform is currently comprised of 34 regions world-wide.
@@ -298,13 +309,18 @@ Let's briefly look under the hood to better understand what's going on when an S
 1. We need to acquire an OAuth2 bearer token by authenticating ourselves against an identity provider such as Azure AD
 2. We use this bearer token to sign our requests to authenticate against the relying party which is the Azure Management API in our case
 
-The token can be acquired with a `POST` call to `https://login.windows.net/<tenantId>/oauth2/token`. The tenant id is your Azure AD tenant that is associated to your subscription, and where you have created a service principal. Think of `https://login.windows.net` as a landing page that forwards you to the correct identity provider depending on whether you are using a work or school account (re-directs you to your Azure AD tenant), or a Microsoft account (re-directs you the Microsoft consumer identity system).
+The example assumes we are using the Internation Cloud. The use of another Azure cloud environment requires you to use the according endpoints of that respective environments.
 
- In our example we want a token that can be used to sign requests against the service management API of the **International Cloud** which is hosted at `https://management.core.windows.net`. We provide this information and our service principal credentials in the body of this request.
+ The JSON Web Token (JWT) can be acquired with a `POST` call to `https://login.windows.net/<tenantId>/oauth2/token`. The tenant id is your Azure AD tenant that is associated to your subscription, and where you have created a service principal. Think of `https://login.windows.net` as a landing page that forwards you to the correct identity provider depending on whether you are using a work or school account (re-directs you to your Azure AD tenant), or a Microsoft account (re-directs you the Microsoft consumer identity system).
 
-After having acquired this token we can add it to the Authorization Header of our HTTP-request against the service management API. See section [Resource Provider](#resource-provider) for a more detailed discussion on how this API works.
+ In our example we want a token that can be used to sign requests against the ARM API of the **International Cloud**. For this we need to specify the correct *audience* which is `https://management.core.windows.net`. We provide this information and our service principal credentials in the body of this request.
+
+After having acquired this token we can add it to the Authorization Header of our HTTP-request against the service management API which is hosted at [https://management.azure.com/](https://management.azure.com/). See section [Resource Provider](#resource-provider) for a more detailed discussion on how this API works.
 
 We recommend to take a look at this [easy to understand code example](https://github.com/arafato/funcy-azure/blob/master/lib/utils/ARMRest.js#L5-L36) (NodeJS) that walks the path we have just outlined on a high-level.
+
+For a more detailed disucssion on different authentication scenarions we recommend to the following link:  
+  [https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios)
 
 ### Azure Resource Manager
 Azure Resource Manager (ARM) is the recommended model for deploying and managing your applications on Azure. 
