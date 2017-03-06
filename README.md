@@ -3,7 +3,7 @@ A curated guide to get going fast on the Azure platform.
 Links, best-practices, explanantions and comments, I wish I had known before 
 I started using Azure.
 
-**DRAFT VERSION 0.2** (still early stage, TOC is not final!)
+**DRAFT VERSION 0.3** (still early stage, TOC is almost final)
 
 ## Table of Contents
 
@@ -14,6 +14,9 @@ I started using Azure.
     * [Authentication and Authorization](#authentication-and-authorization)
     * [Azure Resource Manager](#azure-resource-manager)
 * [Developer Tooling](#developer-tooling)
+* [Infrastructure as a Service (IaaS)](#infrastructure-as-a-service-iaas)
+* [Platform as a Service (IaaS)](#platform-as-a-service-paas)
+* [Software as a Service (SaaS)](#software-as-a-service-saas)
 * [Open-Source Ecosystem](#open-source-ecosystem)
 * [Learning Paths](#learning-paths)
 * [Free Resources](#free-resources)
