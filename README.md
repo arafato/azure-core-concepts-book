@@ -465,6 +465,8 @@ These learning paths do not encompass all of our services currently available. F
 ### Free Ebooks
 - [Fundamentals of Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/09/01/free-ebook-microsoft-azure-essentials-fundamentals-of-azure-second-edition/)
 - [Understanding Azure - A Guide for Developers](https://azure.microsoft.com/en-us/campaigns/developer-guide/)
+- [Überblick über Microsoft Azure (German only)](http://aka.ms/azureoverview)  
+A great resource to get an overview about our broad service offering by [Holger Sirtl], including Analytics, IoT, Security, Networking, DevOps, Storage, Web Applications, and Media Services (https://twitter.com/hsirtl)  
 
 ### Webcasts
 - [Azure Friday](https://azure.microsoft.com/resources/videos/azure-friday/)  
