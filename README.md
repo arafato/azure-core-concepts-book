@@ -463,10 +463,11 @@ These learning paths do not encompass all of our services currently available. F
 
 ## Free Resources
 ### Free Ebooks
-- [Fundamentals of Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/09/01/free-ebook-microsoft-azure-essentials-fundamentals-of-azure-second-edition/)
-- [Understanding Azure - A Guide for Developers](https://azure.microsoft.com/en-us/campaigns/developer-guide/)
+- [https://azureinfohub.azurewebsites.net/MediaType?mediaType=Ebook](https://azureinfohub.azurewebsites.net/MediaType?mediaType=Ebook)  
+A comprehensive and curated list of free Azure-related eBooks. 
+A big thank you goes out to [Holger Sirtl](https://twitter.com/hsirtl) who maintains this site.
 - [Überblick über Microsoft Azure (German only)](http://aka.ms/azureoverview)  
-A great resource to get an overview about our broad service offering by [Holger Sirtl], including Analytics, IoT, Security, Networking, DevOps, Storage, Web Applications, and Media Services (https://twitter.com/hsirtl)  
+A great resource to get an overview about our broad service offering by [Holger Sirtl], including Analytics, IoT, Security, Networking, DevOps, Storage, Web Applications, and Media Services. Written by [Holger Sirtl](https://twitter.com/hsirtl).  
 
 ### Webcasts
 - [Azure Friday](https://azure.microsoft.com/resources/videos/azure-friday/)  
@@ -477,6 +478,11 @@ answer Scott’s questions and share their insights.
 Free Microsoft Azure trainings delivered by experts, ranging from our IaaS to PaaS Offerings such as App Service, Azure Search, Nano-Services with Azure Functions, and Microservice with Docker on Azure Container Service. 
 
 ### Whitepapers
+- [Azure Info Hub - Whitepapers](https://azureinfohub.azurewebsites.net/MediaType?mediaType=Whitepaper)  
+A comprehensive and curated list of free Azure-related Whitepapers. 
+A big thank you goes out to [Holger Sirtl](https://twitter.com/hsirtl) who maintains this site.
+- [Azure Whitepapers by David Chappell](http://www.davidchappell.com/writing/white_papers.php)  
+Great high-level and conceptual explanations of Azure-related services and technologies by David Chappell
 - [Securing the Microsoft Cloud](http://download.microsoft.com/download/D/5/E/D5E0E59E-B8BC-4D08-B222-8BE36B233508/Securing_Microsoft_Cloud_Strategy_Brief_.pdf)
 - [Azure Security, Privacy, and Compliance](http://download.microsoft.com/download/1/6/0/160216AA-8445-480B-B60F-5C8EC8067FCA/WindowsAzure-SecurityPrivacyCompliance.pdf)
 - [Security Management in Microsoft Azure](http://download.microsoft.com/download/7/0/E/70E3858E-8764-4233-A00F-49A3C6C3143C/Security_Management_in_Microsoft_Azure-11062014.pdf)
@@ -486,13 +492,14 @@ Free Microsoft Azure trainings delivered by experts, ranging from our IaaS to Pa
 - [Information Security Management](http://download.microsoft.com/download/A/0/3/A03FD8F0-6106-4E64-BB26-13C87203A763/Information_Security_Management_System_for_Microsofts_Cloud_Infrastructure.pdf)
 - [Where and How your Data is Stored](https://www.microsoft.com/en-us/trustcenter/about/transparency)
 
+
 ### Links
 - [Official Azure Blog](https://azure.microsoft.com/blog/)  
 Great resource to get informed about all new services and feature announcements
 - [Official Azure Documentation](https://docs.microsoft.com/azure)  
 Extensive documentation about Azure services, SDKS/Tools, and architectural best-practices
-- [Azure Whitepapers by David Chappell](http://www.davidchappell.com/writing/white_papers.php)  
-Great high-level and conceptual explanations of Azure-related services and technologies by David Chappell
+- [Azure Info Hub](https://azureinfohub.azurewebsites.net/)
+A curated Website full of all sorts of information regarding Microsoft Azure. From querying Azure Feature Announcements, lists of different Webcasts, ebooks, whitepapers, and tools. Must-know resource for everyone building applications with Azure.
 - [Official Microsoft Azure Github Repository](https://github.com/Azure)  
 APIs, SDKs and open source projects from Microsoft Azure (350+ projects) 
 - [Azure Networking and ARM FAQ by Igor Pagliai](https://blogs.msdn.microsoft.com/igorpag/2016/07/24/my-personal-azure-faq-on-azure-networking-and-arm/)  
