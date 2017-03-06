@@ -110,9 +110,8 @@ Trial Registration Form: [https://azuregov.microsoft.com/trial/azuregovtrial](ht
 Endpoints: `$ az cloud list --query "[?name == 'AzureUSGovernment'].endpoints"`
 
 >**Notes**  
->- Please see section [Developer Tooling](#developer-tooling) for information on how to install our new [Python-based Azure-CLI](https://docs.microsoft.com/cli/azure/) `az`.
->   
->- For your convenience, you'll find the list of all [Azure Environment Endpoints](https://github.com/arafato/Azure-RampUp/blob/master/resources/azure-resource-providers.json) right here.
+>- Please see section [Developer Tooling](#developer-tooling) for information on how to install our new [Python-based Azure-CLI](https://docs.microsoft.com/cli/azure/) `az`.   
+>- For your convenience, you'll find the list of all [Azure Environment Endpoints](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json) right here.
 
 ### Regions
 The Azure platform is currently comprised of 34 regions world-wide.
