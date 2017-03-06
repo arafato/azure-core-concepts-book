@@ -439,7 +439,7 @@ TODO: App Service
 TODO: Azure Marketplace
 
 ## Open Source Ecosystem
-This chapter is about third party OSS frameworks and libraries in the context of Azure.
+This chapter is about third party OSS projects in the context of Microsoft Azure.
 ### Compute
 - [Serverless Framework](https://serverless.com/)  
 The Serverless Framework allows you to deploy auto-scaling, pay-per-execution, event-driven functions to any cloud. 
