@@ -75,7 +75,8 @@ Sign Up: [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/)
 
 Portal: [https://portal.microsoft.com](https://portal.microsoft.com) 
 
-Endpoints: `$ az cloud list --query "[?name == 'AzureCloud'].endpoints"`
+Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L4-L10) for your convenience or can be programmatically fetched via   
+`$ az cloud list --query "[?name == 'AzureCloud'].endpoints"`
 
 #### Azure German Cloud
 Also known as *Microsoft Cloud Deutschland*. Comprised of 2 regions, one located in 
@@ -90,7 +91,8 @@ Sign Up: [https://azure.microsoft.com/free/germany/](https://azure.microsoft.com
 
 Portal: [https://portal.microsoftazure.de](https://portal.microsoftazure.de)
 
-Endpoints: `$ az cloud list --query "[?name == 'AzureGermanCloud'].endpoints"`
+Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L61-L67) for your convenience or can be programmatically fetched via  
+`$ az cloud list --query "[?name == 'AzureGermanCloud'].endpoints"`
 
 #### Azure China Cloud
 Azure China Cloud is available through a unique partnership between Microsoft and 21Vianet, one of the country’s largest Internet providers.
@@ -99,7 +101,8 @@ Sign Up: [https://www.windowsazure.cn](https://www.windowsazure.cn)
 
 Portal: [https://portal.azure.cn/](https://portal.azure.cn/)
 
-Endpoints: `$ az cloud list --query "[?name == 'AzureChinaCloud'].endpoints"`
+Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L23-L29) for your convenience or can be programmatically fetched via  
+`$ az cloud list --query "[?name == 'AzureChinaCloud'].endpoints"`
 
 #### Azure Gov Cloud
 Also known as *Microsoft Azure Government Cloud*. Comprised of 4 regions in USA. No public registration.
@@ -107,11 +110,8 @@ More information at [https://azure.microsoft.com/overview/clouds/government/](ht
 
 Trial Registration Form: [https://azuregov.microsoft.com/trial/azuregovtrial](https://azuregov.microsoft.com/trial/azuregovtrial)
 
-Endpoints: `$ az cloud list --query "[?name == 'AzureUSGovernment'].endpoints"`
-
->**Notes**  
->- Please see section [Developer Tooling](#developer-tooling) for information on how to install our new [Python-based Azure-CLI](https://docs.microsoft.com/cli/azure/) `az`.   
->- For your convenience, you'll find the list of all [Azure Environment Endpoints](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json) right here.
+Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L42-L48) for your convenience or can be programmatically fetched via  
+`$ az cloud list --query "[?name == 'AzureUSGovernment'].endpoints"`
 
 ### Regions
 The Azure platform is currently comprised of 34 regions world-wide.
