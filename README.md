@@ -47,17 +47,21 @@ need every day when working with Microsoft Azure.
 ### Environments
 Azure is comprised of currently four different so-called *environments* that are strictly isolated from each other. 
 *Strictly isolated* means:
-- They are operated and managed through [different endpoints]((https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json)) (same API interfaces, though)
+- They are operated and managed through [different endpoints](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json) (same API interfaces, though)
 - Their authentification mechanisms (Azure Active Directory) do not have a trust-relationship with each other. Thus, environments 
 do not provide a single sign-on experience amongst each other  
 - They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against the different management and service endpoints
 
 
 Azure currently provides the following environments:
-- Azure Cloud
-- Azure German Cloud
-- Azure US Government
-- Azure China Cloud
+Azure Environment | Name to Use 
+--- | ---
+International Cloud | `AzureCloud` 
+German Cloud | `AzureGermanCloud`
+US Government Cloud | `AzureUSGovernment`
+China Cloud | `AzureChinaCloud`
+
+where *Name to Use* is the name to be used in the context of our [Developer Tools](#developer-tools). 
 
 **Gotcha**
 >- The *Azure Cloud* environment is the only one which has a trust relationship with the
@@ -422,6 +426,9 @@ There is, however, already intellisense support for a wider range of different e
 Also there is a [free and commercial plugin](http://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) available for Visual Studio made by a German-based company [Tangible Engineering](http://www.tangible-engineering.com) that allows you to derive your ARM-Templates from a graphical model.
 
 ## Developer Tooling
+This section will discuss the different means to programmatically talk to Microsoft Azure, and the tooling that is provided by us and third party vendors.
+
+### Talking to Microsoft Azure
 Essentially, Microsoft Azure provides 4 different means to talk to the platform:
 - Azure Portal
 - Command Line Interface (CLI)
@@ -432,12 +439,30 @@ Let's look at each of them and discuss how to use and configure them.
 
 >**Gotcha**
 >- Do not assume (yet) that there is feature parity between all four ways to talk to Microsoft Azure. Unfortunately, there are features that are available via the Portal that might not be available via our SDKs, or available via CLI but not via the Portal. This is a fast moving target so be sure to consult the according documentation on whether the feature is supported. Every feature, however, is available via our [REST API](https://docs.microsoft.com/rest/api/resources/).   
+>
+>- As a rule of thumb, assume that per default, all our tools usually use the endpoints of the International Cloud.
 
 ### Azure Portal
-TODO
+While not being a programmatic means to talk to Azure, for many it is often the first starting point. Keep in mind that every [Azure Environment](#environments) has its dedicated portal running at a dedicated URL, requiring you to use separate login credentials, stored in [Azure Active Directory Tenants](#azure-active-directory) tied to the according environment. No single sign-on experience is provided across different Azure Environments since they do not have a trust-relationship amongst each other.
 
 ### Command Line Interface (CLI)
-TODO
+Azure is currently providing two different cross-platform CLIs:
+- The old one based on NodeJS, still supporting the old ASM and the new ARM model. It is available via [Node Package Manager (NPM)](https://www.npmjs.com/package/azure-cli), and hosted on [Github](https://github.com/Azure/azure-xplat-cli).
+- The new one often referred to as **Azure CLI 2.0**, written in Python, and only supporting the new ARM model. It is also hosted on [Github](https://github.com/azure/azure-cli). For installing instructions please refer to our [install guide](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+
+We strongly recommend to use the new Azure CLI 2.0. For the rational behind introducing a new CLI, please refer to the official [announcement](https://azure.microsoft.com/en-us/blog/announcing-azure-cli-2-preview/). We will refer to new Azure CLI 2.0 for the remainder of this section.
+
+- Overview and Documentation:  
+[https://docs.microsoft.com/en-us/cli/azure/overview](https://docs.microsoft.com/en-us/cli/azure/overview).
+
+- Environment Configuration   
+To change the environment to be used, type  
+`$ az cloud set --name <environment_name>`   
+where `<environment_name>` is any of our [currently available Azure Environments](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json).
+
+>**Gotcha**
+>-  If you use both CLIs, remember that `azure` is the old CLI, and that `az` is the new Azure CLI 2.0.
+
 
 ### SDKs
 TODO
