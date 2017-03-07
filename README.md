@@ -73,7 +73,7 @@ Also known as the International Cloud. Currently comprised of 30 regions world-w
 
 Sign Up: [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/) 
 
-Portal: [https://portal.microsoft.com](https://portal.microsoft.com) 
+Portal: [https://portal.azure.com](https://portal.azure.com) 
 
 Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L4-L10) for your convenience or can be programmatically fetched via   
 `$ az cloud list --query "[?name == 'AzureCloud'].endpoints"`
@@ -421,6 +421,7 @@ There is, however, already intellisense support for a wider range of different e
 Also there is a [free and commercial plugin](http://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) available for Visual Studio made by a German-based company [Tangible Engineering](http://www.tangible-engineering.com) that allows you to derive your ARM-Templates from a graphical model.
 
 ## Developer Tooling
+
 https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli
 TODO: Portal, CLIs, SDKs, IDEs and according configuration
 
