@@ -54,6 +54,7 @@ do not provide a single sign-on experience amongst each other
 
 
 Azure currently provides the following environments:
+
 | Azure Environment | Name to Use |
 | --- | --- |
 | International Cloud | `AzureCloud` |
@@ -61,7 +62,7 @@ Azure currently provides the following environments:
 | US Government Cloud | `AzureUSGovernment` |
 | China Cloud | `AzureChinaCloud` |
 
-where *Name to Use* is the name to be used in the context of our [Developer Tools](#developer-tools). 
+where *Name to Use* is the name to be used in the context of our [Developer Tooling](#developer-tooling). 
 
 **Gotcha**
 >- The *Azure Cloud* environment is the only one which has a trust relationship with the
@@ -452,13 +453,18 @@ Azure is currently providing two different cross-platform CLIs:
 
 We strongly recommend to use the new Azure CLI 2.0. For the rational behind introducing a new CLI, please refer to the official [announcement](https://azure.microsoft.com/en-us/blog/announcing-azure-cli-2-preview/). We will refer to new Azure CLI 2.0 for the remainder of this section.
 
-- Overview and Documentation:  
+**Overview and Documentation:**  
 [https://docs.microsoft.com/en-us/cli/azure/overview](https://docs.microsoft.com/en-us/cli/azure/overview).
 
-- Environment Configuration   
+**Installation**  
+[https://docs.microsoft.com/en-us/cli/azure/install-azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+**Environment Configuration**   
 To change the environment to be used, type  
+
 `$ az cloud set --name <environment_name>`   
-where `<environment_name>` is any of our [currently available Azure Environments](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json).
+
+where `<environment_name>` is any of our [currently available Azure Environments](https://github.com/arafato/Azure-RampUp/blob/master/resources/environments.md).
 
 >**Gotcha**
 >-  If you use both CLIs, remember that `azure` is the old CLI, and that `az` is the new Azure CLI 2.0.
