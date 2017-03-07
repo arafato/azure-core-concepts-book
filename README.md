@@ -446,6 +446,8 @@ Let's look at each of them and discuss how to use and configure them.
 ### Azure Portal
 While not being a programmatic means to talk to Azure, for many it is often the first starting point. Keep in mind that every [Azure Environment](#environments) has its dedicated portal running at a dedicated URL, requiring you to use separate login credentials, stored in [Azure Active Directory Tenants](#azure-active-directory) tied to the according environment. No single sign-on experience is provided across different Azure Environments since they do not have a trust-relationship amongst each other.
 
+Please refer to the section [Azure Environments](#environments) to get an overview, under which URL an according portal for a given environment can be found. 
+
 ### Command Line Interface (CLI)
 Azure is currently providing two different cross-platform CLIs:
 - The old one based on NodeJS, still supporting the old ASM and the new ARM model. It is available via [Node Package Manager (NPM)](https://www.npmjs.com/package/azure-cli), and hosted on [Github](https://github.com/Azure/azure-xplat-cli).
