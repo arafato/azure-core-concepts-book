@@ -54,12 +54,12 @@ do not provide a single sign-on experience amongst each other
 
 
 Azure currently provides the following environments:
-Azure Environment | Name to Use 
---- | ---
-International Cloud | `AzureCloud` 
-German Cloud | `AzureGermanCloud`
-US Government Cloud | `AzureUSGovernment`
-China Cloud | `AzureChinaCloud`
+| Azure Environment | Name to Use |
+| --- | --- |
+| International Cloud | `AzureCloud` |
+| German Cloud | `AzureGermanCloud` |
+| US Government Cloud | `AzureUSGovernment` |
+| China Cloud | `AzureChinaCloud` |
 
 where *Name to Use* is the name to be used in the context of our [Developer Tools](#developer-tools). 
 
