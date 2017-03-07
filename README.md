@@ -320,8 +320,9 @@ After having acquired this token we can add it to the Authorization Header of ou
 
 We recommend to take a look at this [easy to understand code example](https://github.com/arafato/funcy-azure/blob/master/lib/utils/ARMRest.js#L5-L36) (NodeJS) that walks the path we have just outlined on a high-level.
 
-For a more detailed disucssion on different authentication scenarions we recommend to the following link:  
-  [https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios)
+For a more detailed disucssion on different authentication scenarions we recommend the following links:  
+- [https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api)
+- [https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenario](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios)
 
 ### Azure Resource Manager
 Azure Resource Manager (ARM) is the recommended model for deploying and managing your applications on Azure. 
@@ -421,6 +422,29 @@ There is, however, already intellisense support for a wider range of different e
 Also there is a [free and commercial plugin](http://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) available for Visual Studio made by a German-based company [Tangible Engineering](http://www.tangible-engineering.com) that allows you to derive your ARM-Templates from a graphical model.
 
 ## Developer Tooling
+Essentially, Microsoft Azure provides 4 different means to talk to the platform:
+- Azure Portal
+- Command Line Interface (CLI)
+- SDKs for various programming languages
+- REST API
+
+Let's look at each of them and discuss how to use and configure them.
+
+>**Gotcha**
+>- Do not assume (yet) that there is feature parity between all four ways to talk to Microsoft Azure. Unfortunately, there are features that are available via the Portal that might not be available via our SDKs, or available via CLI but not via the Portal. This is a fast moving target so be sure to consult the according documentation on whether the feature is supported. Every feature, however, is available via our [REST API](https://docs.microsoft.com/rest/api/resources/).   
+
+### Azure Portal
+TODO
+
+### Command Line Interface (CLI)
+TODO
+
+### SDKs
+TODO
+
+### REST API
+TODO
+[https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api)
 
 https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli
 TODO: Portal, CLIs, SDKs, IDEs and according configuration
