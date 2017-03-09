@@ -146,7 +146,7 @@ refer to *Control Plane* and *Data Plane*.
 >
 >A **Data Plane** is the set of APIs that allow you to actually use the resource.
 
-Example: In order to provision a Storage Account, I need to use a different set of APIs compared towhen I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
+Example: In order to provision a Storage Account, I need to use a different set of APIs compared to when I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
 provision an EventHub compared to when I actually push data to it.  
 
 Why is this important? Because Azure provides two different authentication mechanisms.
