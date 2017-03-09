@@ -136,7 +136,7 @@ terms are used inconsistently throughout the web, and that Azure has two differe
 authentication models, depending on whether you are using ARM or ASM (see section [Azure Resource Manager](#azure-resource-manager)). 
 We will focus on ARM which is the current model and the one you should use for every new project.
 
-wSo let's provide clarity.
+So let's provide clarity.
 
 #### Short tale about two different authentication schemas
 Before we look at the different aspects and services let's quickly define what we mean when we
