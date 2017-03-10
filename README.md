@@ -511,7 +511,7 @@ AWS S3 Proxy written in Java with support for Azure Blob Storage and many other 
 
 ### DevOps
 - [Proto](https://github.com/hoffmann/tropo)  
-A Python library to generate Azure Resource Manager (ARM) Templates. Kudos to [Peter Hoffmann](#https://twitter.com/peterhoffmann) from [BlueYonder](https://twitter.com/BlueYonderTech) for maintaining this project.
+A Python library to generate Azure Resource Manager (ARM) Templates. Kudos to [Peter Hoffmann](https://twitter.com/peterhoffmann) from [BlueYonder](https://twitter.com/BlueYonderTech) for maintaining this project.
 
 ## Learning Paths
 The following link points you to an overview listing all available learning paths we
