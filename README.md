@@ -99,6 +99,8 @@ Portal: [https://portal.microsoftazure.de](https://portal.microsoftazure.de)
 Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L61-L67) for your convenience or can be programmatically fetched via  
 `$ az cloud list --query "[?name == 'AzureGermanCloud'].endpoints"`
 
+For further information on the German cloud, the data trustee model, and the data trustee agreement, please refer to the according resources in the [German Cloud](#german-cloud) section.
+
 #### Azure China Cloud
 Azure China Cloud is available through a unique partnership between Microsoft and 21Vianet, one of the country’s largest Internet providers.
 
@@ -553,6 +555,12 @@ Great high-level and conceptual explanations of Azure-related services and techn
 - [Information Security Management](http://download.microsoft.com/download/A/0/3/A03FD8F0-6106-4E64-BB26-13C87203A763/Information_Security_Management_System_for_Microsofts_Cloud_Infrastructure.pdf)
 - [Where and How your Data is Stored](https://www.microsoft.com/en-us/trustcenter/about/transparency)
 
+### German Cloud
+- [Whitepaper German Trustee Concept (German only)](https://github.com/arafato/Azure-RampUp/blob/master/resources/data_trustee_mcd_de.pdf)  
+An in-depth view at the German Cloud and the data trustee model.
+- [Official Customer Data Trustee Agreement (DE)](http://microsoftvolumelicensing.com/Downloader.aspx?DocumentId=11453)
+- [Official Customer Data Trustee Agreement (EN)](http://microsoftvolumelicensing.com/Downloader.aspx?DocumentId=11452)  
+The Customer-Data Trustee Agreement is a legally separate contract between Customer and Data Trustee. Microsoft is not a party to this agreement. 
 
 ### Links
 - [Official Azure Blog](https://azure.microsoft.com/blog/)  
