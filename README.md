@@ -420,7 +420,7 @@ There are multiple ways to do that:
 >- The internal JSON representation of an Azure resource will usually include many more attributes than your original ARM-Template, since the internal representation is explicit. Many attributes have standard values that you often do not explicitly set or are only set and known at provision time such as internal domain name suffixes of your network interface cards. 
 
 ##### Tool Support
-Writing complex infrastructure setups "by hand" is possible but sometimes people end up writing their own ARM-Template generation tools to speed up things. Up to now, these companies haven't yet released their frameworks and tools. If they do, we will post the according links here.
+Writing complex infrastructure setups "by hand" is possible but sometimes people end up writing their own ARM-Template generation tools to speed up things. According projects are still in its infancy, however, support is growing. We'll take a look at these kind of projects in section [Open-Source Ecosystem](#open-source-ecosystem).
 
 There is, however, already intellisense support for a wider range of different editors. We will look at them in section [Developer Tooling](#developer-tooling).
 
@@ -509,6 +509,10 @@ A lightweight server clone of Azure Blob Storage that simulates most of the
 commands supported by it with minimal dependencies. Written in NodeJS.
 - [S3Proxy](https://github.com/andrewgaul/s3proxy)  
 AWS S3 Proxy written in Java with support for Azure Blob Storage and many other storage backends.
+
+### DevOps
+- [Proto](https://github.com/hoffmann/tropo)  
+A Python library to generate Azure Resource Manager (ARM) Templates. Kudos to [Peter Hoffmann](#https://twitter.com/peterhoffmann) from [BlueYonder](https://twitter.com/BlueYonderTech) for maintaining this project.
 
 ## Learning Paths
 The following link points you to an overview listing all available learning paths we
