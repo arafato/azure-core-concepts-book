@@ -510,6 +510,8 @@ A lightweight server clone of Azure Blob Storage that simulates most of the
 commands supported by it with minimal dependencies. Written in NodeJS.
 - [S3Proxy](https://github.com/andrewgaul/s3proxy)  
 AWS S3 Proxy written in Java with support for Azure Blob Storage and many other storage backends.
+- [BlobPorter](https://github.com/Azure/blobporter)  
+A high throughput blob copier, optimized for large files. Written in Golang.
 
 ### DevOps
 - [Proto](https://github.com/hoffmann/tropo)  
