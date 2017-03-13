@@ -372,7 +372,7 @@ Example: In order to talk to the REST API of a virtual machine named `myVM` in t
 
 You will find the official Azure REST API reference here: [https://docs.microsoft.com/en-us/rest/api/](https://docs.microsoft.com/en-us/rest/api/)
 
-Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at that these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
+Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
 
 #### Resource Groups
 A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
@@ -473,8 +473,47 @@ where `<environment_name>` is any of our [currently available Azure Environments
 >-  If you use both CLIs, remember that `azure` is the old CLI, and that `az` is the new Azure CLI 2.0.
 
 
-### SDKs
-TODO
+### SDKs and Tools
+You can get an overview about our officially supported SDKs and tools at  
+[https://docs.microsoft.com/en-us/azure/#pivot=sdkstools&panel=sdkstools-all](https://docs.microsoft.com/en-us/azure/#pivot=sdkstools&panel=sdkstools-all)
+
+Our officially supported SDKs are all open-source and available on Github. In the remainder of this section we will sho how to configure these SDKs for use with different Azure environments other than the International Cloud. In particular, we will demonstrate how to do a interactive logins, logins via service principals, a call to the control plane, and a call to the data plane via shared access keys. See section [Short Tale About Two Different Authentication Schemas](https://github.com/arafato/Azure-RampUp#short-tale-about-two-different-authentication-schemas)  for details on control- and access planes, and shared access keys.
+#### .NET SDK
+[.NET SDK on Github](https://github.com/Azure/azure-sdk-for-net)
+
+#### Java SDK
+[Java SDK](https://github.com/Azure/azure-sdk-for-java)
+
+#### NodeJS SDK
+- [Source code on Github](https://github.com/Azure/azure-sdk-for-node):   
+
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-node/blob/master/runtime/ms-rest-azure/lib/azureEnvironment.js#L48-L124)    
+
+- [Azure Environment Configuration](https://github.com/arafato/Azure-RampUp/blob/master/resources/sdk/nodejs_env.js)  
+Sample on how to configure this SDK to use a specific Azure environment (e.g. German Cloud).
+Per default, it uses the International Cloud.
+
+
+#### Python SDK
+[Python SDK](https://github.com/Azure/azure-sdk-for-python)
+
+#### Ruby SDK
+[Ruby SDK](https://github.com/Azure/azure-sdk-for-ruby)
+
+#### PHP SDK
+[PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+
+#### Golang SDK
+Work in Progress, not yet officially supported:
+[Go SDK](https://github.com/Azure/azure-sdk-for-go)
+
+This repository is under heavy ongoing development and is likely to break over time. We currently do not have any releases yet. 
+
+#### Azure IoT SDKs
+You will find an overview about all currently supported Azure IoT SDKs on this landing page:
+
+[https://github.com/Azure/azure-iot-sdks#microsoft-azure-iot-sdks-1](https://github.com/Azure/azure-iot-sdks#microsoft-azure-iot-sdks-1)
+
 
 ### REST API
 TODO
@@ -487,6 +526,7 @@ TODO: Portal, CLIs, SDKs, IDEs and according configuration
 
 ## Infrastructure as a Service (IaaS)
 TODO: VMs, Storage, VNET, Availability Set, Managed Disks
+https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes
 
 ## Platform as a Service (PaaS)
 TODO: App Service 
