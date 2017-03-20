@@ -47,17 +47,22 @@ need every day when working with Microsoft Azure.
 ### Environments
 Azure is comprised of currently four different so-called *environments* that are strictly isolated from each other. 
 *Strictly isolated* means:
-- They are operated and managed through [different endpoints]((https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json)) (same API interfaces, though)
+- They are operated and managed through [different endpoints](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json) (same API interfaces, though)
 - Their authentification mechanisms (Azure Active Directory) do not have a trust-relationship with each other. Thus, environments 
 do not provide a single sign-on experience amongst each other  
 - They are managed through distinct graphical user interfaces (Azure speak: portals) since a portal also needs to authenticate and operate against the different management and service endpoints
 
 
 Azure currently provides the following environments:
-- Azure Cloud
-- Azure German Cloud
-- Azure US Government
-- Azure China Cloud
+
+| Azure Environment | Name to Use |
+| --- | --- |
+| International Cloud | `AzureCloud` |
+| German Cloud | `AzureGermanCloud` |
+| US Government Cloud | `AzureUSGovernment` |
+| China Cloud | `AzureChinaCloud` |
+
+where *Name to Use* is the name to be used in the context of our [Developer Tooling](#developer-tooling). 
 
 **Gotcha**
 >- The *Azure Cloud* environment is the only one which has a trust relationship with the
@@ -73,7 +78,7 @@ Also known as the International Cloud. Currently comprised of 30 regions world-w
 
 Sign Up: [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/) 
 
-Portal: [https://portal.microsoft.com](https://portal.microsoft.com) 
+Portal: [https://portal.azure.com](https://portal.azure.com) 
 
 Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L4-L10) for your convenience or can be programmatically fetched via   
 `$ az cloud list --query "[?name == 'AzureCloud'].endpoints"`
@@ -93,6 +98,8 @@ Portal: [https://portal.microsoftazure.de](https://portal.microsoftazure.de)
 
 Endpoints: are [listed here](https://github.com/arafato/Azure-RampUp/blob/master/resources/endpoints.json#L61-L67) for your convenience or can be programmatically fetched via  
 `$ az cloud list --query "[?name == 'AzureGermanCloud'].endpoints"`
+
+For further information on the German cloud, the data trustee model, and the data trustee agreement, please refer to the according resources in the [German Cloud](#german-cloud) section.
 
 #### Azure China Cloud
 Azure China Cloud is available through a unique partnership between Microsoft and 21Vianet, one of the country’s largest Internet providers.
@@ -146,8 +153,7 @@ refer to *Control Plane* and *Data Plane*.
 >
 >A **Data Plane** is the set of APIs that allow you to actually use the resource.
 
-Example: In order to provision a Storage Account, I need to use a different set of APIs compared to
-when I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
+Example: In order to provision a Storage Account, I need to use a different set of APIs compared to when I want to actually store some data on it. Likewise, I'm using a different set of APIs when I want to
 provision an EventHub compared to when I actually push data to it.  
 
 Why is this important? Because Azure provides two different authentication mechanisms.
@@ -174,7 +180,7 @@ Each Azure AD tenant is distinct and separate from other Azure AD tenants.
 
 An Azure AD tenant has always the following domain assigned **.onmicrosoft.com.* For example, 
 if you sign up with your MS consumer account *joe.doe@outlook.com* an Azure AD tenant is 
-automatically created for you similiar to `joedoeoutlook.onmicrosoft.com`. A user *Lilli* created in this directory would be referred to as lilli@joedoeoutlook.onmicrosoft.com. Of yourse, if you have your own domain, you can create a CNAME to `joedoeoutlook.onmicrosoft.com` so that users do not need to use these ackward-looking user-name accounts.
+automatically created for you similiar to `joedoeoutlook.onmicrosoft.com`. A user *Lilli* created in this directory would be referred to as lilli@joedoeoutlook.onmicrosoft.com. Of yourse, if you have your own domain, you can create a CNAME to `joedoeoutlook.onmicrosoft.com` so that users do not need to use these awkward-looking user-name accounts.
 
 A tenant houses the users in a company and the information about them - their passwords, 
 user profile data, permissions, and so on. It also contains groups, applications, 
@@ -182,7 +188,7 @@ and other information pertaining to an organization and its security.
 
 There are two types of accounts you can use to sign in: a **Microsoft account** 
 (formerly known as Microsoft Live ID) and a **work or school account**, which is an 
-account stored in Azure AD. There is a federation relationship between between
+account stored in Azure AD. There is a federation relationship between
 Azure AD and the Microsoft account consumer identity system. As a result, Azure AD is
 able to authenticate "guest" Microsoft accounts as well as "native" Azure AD accounts, assuming that the Azure AD tenant is living in the International Cloud.
 
@@ -320,8 +326,9 @@ After having acquired this token we can add it to the Authorization Header of ou
 
 We recommend to take a look at this [easy to understand code example](https://github.com/arafato/funcy-azure/blob/master/lib/utils/ARMRest.js#L5-L36) (NodeJS) that walks the path we have just outlined on a high-level.
 
-For a more detailed disucssion on different authentication scenarions we recommend to the following link:  
-  [https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios)
+For a more detailed disucssion on different authentication scenarions we recommend the following links:  
+- [https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api)
+- [https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenario](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios)
 
 ### Azure Resource Manager
 Azure Resource Manager (ARM) is the recommended model for deploying and managing your applications on Azure. 
@@ -365,7 +372,7 @@ Example: In order to talk to the REST API of a virtual machine named `myVM` in t
 
 You will find the official Azure REST API reference here: [https://docs.microsoft.com/en-us/rest/api/](https://docs.microsoft.com/en-us/rest/api/)
 
-Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at that these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
+Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
 
 #### Resource Groups
 A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
@@ -414,13 +421,104 @@ There are multiple ways to do that:
 >- The internal JSON representation of an Azure resource will usually include many more attributes than your original ARM-Template, since the internal representation is explicit. Many attributes have standard values that you often do not explicitly set or are only set and known at provision time such as internal domain name suffixes of your network interface cards. 
 
 ##### Tool Support
-Writing complex infrastructure setups "by hand" is possible but sometimes people end up writing their own ARM-Template generation tools to speed up things. Up to now, these companies haven't yet released their frameworks and tools. If they do, we will post the according links here.
+Writing complex infrastructure setups "by hand" is possible but sometimes people end up writing their own ARM-Template generation tools to speed up things. According projects are still in its infancy, however, support is growing. We'll take a look at these kind of projects in section [Open-Source Ecosystem](#open-source-ecosystem).
 
 There is, however, already intellisense support for a wider range of different editors. We will look at them in section [Developer Tooling](#developer-tooling).
 
 Also there is a [free and commercial plugin](http://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) available for Visual Studio made by a German-based company [Tangible Engineering](http://www.tangible-engineering.com) that allows you to derive your ARM-Templates from a graphical model.
 
 ## Developer Tooling
+This section will discuss the different means to programmatically talk to Microsoft Azure, and the tooling that is provided by us and third party vendors.
+
+### Talking to Microsoft Azure
+Essentially, Microsoft Azure provides 4 different means to talk to the platform:
+- Azure Portal
+- Command Line Interface (CLI)
+- SDKs for various programming languages
+- REST API
+
+Let's look at each of them and discuss how to use and configure them.
+
+>**Gotcha**
+>- Do not assume (yet) that there is feature parity between all four ways to talk to Microsoft Azure. Unfortunately, there are features that are available via the Portal that might not be available via our SDKs, or available via CLI but not via the Portal. This is a fast moving target so be sure to consult the according documentation on whether the feature is supported. Every feature, however, is available via our [REST API](https://docs.microsoft.com/rest/api/resources/).   
+>
+>- As a rule of thumb, assume that per default, all our tools usually use the endpoints of the International Cloud.
+
+### Azure Portal
+While not being a programmatic means to talk to Azure, for many it is often the first starting point. Keep in mind that every [Azure Environment](#environments) has its dedicated portal running at a dedicated URL, requiring you to use separate login credentials, stored in [Azure Active Directory Tenants](#azure-active-directory) tied to the according environment. No single sign-on experience is provided across different Azure Environments since they do not have a trust-relationship amongst each other.
+
+Please refer to the section [Azure Environments](#environments) to get an overview, under which URL an according portal for a given environment can be found. 
+
+### Command Line Interface (CLI)
+Azure is currently providing two different cross-platform CLIs:
+- The old one based on NodeJS, still supporting the old ASM and the new ARM model. It is available via [Node Package Manager (NPM)](https://www.npmjs.com/package/azure-cli), and hosted on [Github](https://github.com/Azure/azure-xplat-cli).
+- The new one often referred to as **Azure CLI 2.0**, written in Python, and only supporting the new ARM model. It is also hosted on [Github](https://github.com/azure/azure-cli). For installing instructions please refer to our [install guide](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+
+We strongly recommend to use the new Azure CLI 2.0. For the rational behind introducing a new CLI, please refer to the official [announcement](https://azure.microsoft.com/en-us/blog/announcing-azure-cli-2-preview/). We will refer to new Azure CLI 2.0 for the remainder of this section.
+
+**Overview and Documentation:**  
+[https://docs.microsoft.com/en-us/cli/azure/overview](https://docs.microsoft.com/en-us/cli/azure/overview).
+
+**Installation**  
+[https://docs.microsoft.com/en-us/cli/azure/install-azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+**Environment Configuration**   
+To change the environment to be used, type  
+
+`$ az cloud set --name <environment_name>`   
+
+where `<environment_name>` is any of our [currently available Azure Environments](https://github.com/arafato/Azure-RampUp/blob/master/resources/environments.md).
+
+>**Gotcha**
+>-  If you use both CLIs, remember that `azure` is the old CLI, and that `az` is the new Azure CLI 2.0.
+
+
+### SDKs and Tools
+You can get an overview about our officially supported SDKs and tools at  
+[https://docs.microsoft.com/en-us/azure/#pivot=sdkstools&panel=sdkstools-all](https://docs.microsoft.com/en-us/azure/#pivot=sdkstools&panel=sdkstools-all)
+
+Our officially supported SDKs are all open-source and available on Github. In the remainder of this section we will sho how to configure these SDKs for use with different Azure environments other than the International Cloud. In particular, we will demonstrate how to do a interactive logins, logins via service principals, a call to the control plane, and a call to the data plane via shared access keys. See section [Short Tale About Two Different Authentication Schemas](https://github.com/arafato/Azure-RampUp#short-tale-about-two-different-authentication-schemas)  for details on control- and access planes, and shared access keys.
+#### .NET SDK
+[.NET SDK on Github](https://github.com/Azure/azure-sdk-for-net)
+
+#### Java SDK
+[Java SDK](https://github.com/Azure/azure-sdk-for-java)
+
+#### NodeJS SDK
+- [Source code on Github](https://github.com/Azure/azure-sdk-for-node):   
+
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-node/blob/master/runtime/ms-rest-azure/lib/azureEnvironment.js#L48-L124)    
+
+- [Azure Environment Configuration](https://github.com/arafato/Azure-RampUp/blob/master/resources/sdk/nodejs_env.js)  
+Sample on how to configure this SDK to use a specific Azure environment (e.g. German Cloud).
+Per default, it uses the International Cloud.
+
+
+#### Python SDK
+[Python SDK](https://github.com/Azure/azure-sdk-for-python)
+
+#### Ruby SDK
+[Ruby SDK](https://github.com/Azure/azure-sdk-for-ruby)
+
+#### PHP SDK
+[PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+
+#### Golang SDK
+Work in Progress, not yet officially supported:
+[Go SDK](https://github.com/Azure/azure-sdk-for-go)
+
+This repository is under heavy ongoing development and is likely to break over time. We currently do not have any releases yet. 
+
+#### Azure IoT SDKs
+You will find an overview about all currently supported Azure IoT SDKs on this landing page:
+
+[https://github.com/Azure/azure-iot-sdks#microsoft-azure-iot-sdks-1](https://github.com/Azure/azure-iot-sdks#microsoft-azure-iot-sdks-1)
+
+
+### REST API
+TODO
+[https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api)
+
 https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli
 TODO: Portal, CLIs, SDKs, IDEs and according configuration
 
@@ -428,6 +526,7 @@ TODO: Portal, CLIs, SDKs, IDEs and according configuration
 
 ## Infrastructure as a Service (IaaS)
 TODO: VMs, Storage, VNET, Availability Set, Managed Disks
+https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes
 
 ## Platform as a Service (PaaS)
 TODO: App Service 
@@ -451,6 +550,12 @@ A lightweight server clone of Azure Blob Storage that simulates most of the
 commands supported by it with minimal dependencies. Written in NodeJS.
 - [S3Proxy](https://github.com/andrewgaul/s3proxy)  
 AWS S3 Proxy written in Java with support for Azure Blob Storage and many other storage backends.
+- [BlobPorter](https://github.com/Azure/blobporter)  
+A high throughput blob copier, optimized for large files. Written in Golang.
+
+### DevOps
+- [Proto](https://github.com/hoffmann/tropo)  
+A Python library to generate Azure Resource Manager (ARM) Templates. Kudos to [Peter Hoffmann](https://twitter.com/peterhoffmann) from [BlueYonder](https://twitter.com/BlueYonderTech) for maintaining this project.
 
 ## Learning Paths
 The following link points you to an overview listing all available learning paths we
@@ -492,6 +597,12 @@ Great high-level and conceptual explanations of Azure-related services and techn
 - [Information Security Management](http://download.microsoft.com/download/A/0/3/A03FD8F0-6106-4E64-BB26-13C87203A763/Information_Security_Management_System_for_Microsofts_Cloud_Infrastructure.pdf)
 - [Where and How your Data is Stored](https://www.microsoft.com/en-us/trustcenter/about/transparency)
 
+### German Cloud
+- [Whitepaper German Trustee Concept (German only)](https://github.com/arafato/Azure-RampUp/blob/master/resources/data_trustee_mcd_de.pdf)  
+An in-depth view at the German Cloud and the data trustee model.
+- [Official Customer Data Trustee Agreement (DE)](http://microsoftvolumelicensing.com/Downloader.aspx?DocumentId=11453)
+- [Official Customer Data Trustee Agreement (EN)](http://microsoftvolumelicensing.com/Downloader.aspx?DocumentId=11452)  
+The Customer-Data Trustee Agreement is a legally separate contract between Customer and Data Trustee. Microsoft is not a party to this agreement. 
 
 ### Links
 - [Official Azure Blog](https://azure.microsoft.com/blog/)  
