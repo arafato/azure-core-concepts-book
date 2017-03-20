@@ -479,7 +479,9 @@ You can get an overview about our officially supported SDKs and tools at
 
 Our officially supported SDKs are all open-source and available on Github. In the remainder of this section we will sho how to configure these SDKs for use with different Azure environments other than the International Cloud. In particular, we will demonstrate how to do a interactive logins, logins via service principals, a call to the control plane, and a call to the data plane via shared access keys. See section [Short Tale About Two Different Authentication Schemas](https://github.com/arafato/Azure-RampUp#short-tale-about-two-different-authentication-schemas)  for details on control- and access planes, and shared access keys.
 #### .NET SDK
-[.NET SDK on Github](https://github.com/Azure/azure-sdk-for-net)
+- [Source code on Github](https://github.com/Azure/azure-sdk-for-net)
+
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-net/blob/cbcb6e489788c58b6edb849ae49bfb398de20dbd/src/Authentication/Common.Authentication/Models/AzureEnvironment.Methods.cs#L71-L143)
 
 #### Java SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-java)
