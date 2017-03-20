@@ -506,6 +506,8 @@ Per default, it uses the International Cloud.
 #### iOS SDK
 [iOS SDK](https://github.com/Azure/azure-mobile-apps-ios-client)
 
+#### Android SDK
+[Android SDK](https://github.com/Azure/azure-mobile-apps-android-client)
 
 #### Golang SDK
 Work in Progress, not yet officially supported:
