@@ -501,25 +501,25 @@ Per default, it uses the International Cloud.
 #### Python SDK
 - [Python SDK](https://github.com/Azure/azure-sdk-for-python)
 
-- [Currently supported Azure Environments and names to use]
-All environments are supported since the user has to provide the environment endpoint URL
+- Currently supported Azure Environments and names to use:
+The user has to provide the environment endpoint URL. 
 
 - [Azure Environment Configuration](https://github.com/Azure/azure-sdk-for-python/blob/e92b5eda3eaea20541fd582305f6c3c30bae3a4c/doc/multicloud.rst)  
 Sample on how to configure this SDK to use a specific Azure environment (e.g. German Cloud).
 
 
 #### Ruby SDK
-[Ruby SDK](https://github.com/Azure/azure-sdk-for-ruby)
+- [Ruby SDK](https://github.com/Azure/azure-sdk-for-ruby)
 
 - [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-ruby/blob/aa02e9b930a44908c8a61af9d2de9e017cd0550d/runtime/ms_rest_azure/lib/ms_rest_azure/azure_environment.rb#L87-L161)
 
 
 
 #### PHP SDK
-[PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+- [PHP SDK](https://github.com/Azure/azure-sdk-for-php)
 
-- [Currently supported Azure Environments and names to use]
-All environments are supported since the user has to provide the environment endpoint URL
+- Currently supported Azure Environments and names to use:
+The user has to provide the environment endpoint URL. 
 
 
 
