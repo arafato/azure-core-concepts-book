@@ -479,10 +479,14 @@ You can get an overview about our officially supported SDKs and tools at
 
 Our officially supported SDKs are all open-source and available on Github. In the remainder of this section we will sho how to configure these SDKs for use with different Azure environments other than the International Cloud. In particular, we will demonstrate how to do a interactive logins, logins via service principals, a call to the control plane, and a call to the data plane via shared access keys. See section [Short Tale About Two Different Authentication Schemas](https://github.com/arafato/Azure-RampUp#short-tale-about-two-different-authentication-schemas)  for details on control- and access planes, and shared access keys.
 #### .NET SDK
-[.NET SDK on Github](https://github.com/Azure/azure-sdk-for-net)
+- [Source code on Github](https://github.com/Azure/azure-sdk-for-net)
+
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-net/blob/cbcb6e489788c58b6edb849ae49bfb398de20dbd/src/Authentication/Common.Authentication/Models/AzureEnvironment.Methods.cs#L71-L143)
 
 #### Java SDK
-[Java SDK](https://github.com/Azure/azure-sdk-for-java)
+- [Source code on Github](https://github.com/Azure/azure-sdk-for-java)
+
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-java/blob/1a2445c8eb9396bd5d54434d9f4712002c0e9e02/azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/Region.java#L26-L70)
 
 #### NodeJS SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-node):   
@@ -495,13 +499,35 @@ Per default, it uses the International Cloud.
 
 
 #### Python SDK
-[Python SDK](https://github.com/Azure/azure-sdk-for-python)
+- [Python SDK](https://github.com/Azure/azure-sdk-for-python)
+
+- Currently supported Azure Environments and names to use:
+The user has to provide the environment endpoint URL. 
+
+- [Azure Environment Configuration](https://github.com/Azure/azure-sdk-for-python/blob/e92b5eda3eaea20541fd582305f6c3c30bae3a4c/doc/multicloud.rst)  
+Sample on how to configure this SDK to use a specific Azure environment (e.g. German Cloud).
+
 
 #### Ruby SDK
-[Ruby SDK](https://github.com/Azure/azure-sdk-for-ruby)
+- [Ruby SDK](https://github.com/Azure/azure-sdk-for-ruby)
+
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-ruby/blob/aa02e9b930a44908c8a61af9d2de9e017cd0550d/runtime/ms_rest_azure/lib/ms_rest_azure/azure_environment.rb#L87-L161)
+
+
 
 #### PHP SDK
-[PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+- [PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+
+- Currently supported Azure Environments and names to use:
+The user has to provide the environment endpoint URL. 
+
+
+
+#### iOS SDK
+[iOS SDK](https://github.com/Azure/azure-mobile-apps-ios-client)
+
+#### Android SDK
+[Android SDK](https://github.com/Azure/azure-mobile-apps-android-client)
 
 #### Golang SDK
 Work in Progress, not yet officially supported:
