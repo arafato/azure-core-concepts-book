@@ -370,7 +370,8 @@ Example: In order to talk to the REST API of a virtual machine named `myVM` in t
 
 `https://management.azure.com/subscriptions/8d4dee44-4b28-4e05-9927-3a5d34a42bf5/resourceGroups/myrg/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2016-03-01`
 
-You will find the official Azure REST API reference here: [https://docs.microsoft.com/en-us/rest/api/](https://docs.microsoft.com/en-us/rest/api/)
+You will find the official Azure REST API reference here: [https://docs.microsoft.com/azure/templates/](https://docs.microsoft.com/azure/templates/).
+If you know the resource type, you can go directly to it with the following URL format: `https://docs.microsoft.com/azure/templates/{provider-namespace}/{resource-type}`. For example, the SQL database reference content is available at: [https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases)
 
 Note that most Azure service REST APIs have a corresponding client SDK library, which handles much of the client code for you. We will take a more detailed look at these SDKs, and how to configure them accordingly in the [Developer Tooling](#developer-tooling) section.
 
@@ -402,6 +403,9 @@ An end-to-end walkthrough based on a real example
 
 - [Azure Quickstart ARM-Templates](https://github.com/Azure/azure-quickstart-templates)  
 A huge collection of example ARM-Templates that will help you get going fast. Ranging from simple Linux or Windows based VMs, to complex Elastic Search, Cassandra, and Zookeeper setups. 
+
+- [https://docs.microsoft.com/azure/templates](https://docs.microsoft.com/azure/templates)  
+The official Azure REST API reference. If you know the resource type, you can go directly to it with the following URL format: `https://docs.microsoft.com/azure/templates/{provider-namespace}/{resource-type}`. For example, the SQL database reference content is available at: [https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases)
 
 - [Free Ebook: World-class ARM-Templates - Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World%20Class%20ARM%20Templates%20-%20Considerations%20and%20Proven%20Practices.pdf)   
 Over 60 pages full of best-practices and design considerations
