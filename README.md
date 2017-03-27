@@ -494,9 +494,9 @@ Our officially supported SDKs are all open-source and available on Github. In th
 
 - [Login using and authentication file](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)
 
-- [Service principal login]()
+- [Service principal login](#)
 
-- [Azure Active Directory login]()
+- [Azure Active Directory login](#)
 
 #### NodeJS SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-node):   
@@ -511,8 +511,7 @@ Per default, it uses the International Cloud.
 #### Python SDK
 - [Python SDK](https://github.com/Azure/azure-sdk-for-python)
 
-- Currently supported Azure Environments and names to use:
-The user has to provide the environment endpoint URL. 
+- [Currently supported Azure Environments and endpoint URL's to use](#)
 
 - [Azure Environment Configuration](https://github.com/Azure/azure-sdk-for-python/blob/e92b5eda3eaea20541fd582305f6c3c30bae3a4c/doc/multicloud.rst)  
 Sample on how to configure this SDK to use a specific Azure environment (e.g. German Cloud).
