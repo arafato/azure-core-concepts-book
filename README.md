@@ -490,7 +490,13 @@ Our officially supported SDKs are all open-source and available on Github. In th
 #### Java SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-java)
 
-- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-java/blob/1a2445c8eb9396bd5d54434d9f4712002c0e9e02/azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/Region.java#L26-L70)
+- [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-java/blob/fd4ce079a84c662d8a11e23a933fb4d7a33baa4e/runtimes/azure-client-runtime/src/main/java/com/microsoft/azure/AzureEnvironment.java#L63-L94)
+
+- [Login using and authentication file](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)
+
+- [Service principal login]()
+
+- [Azure Active Directory login]()
 
 #### NodeJS SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-node):   
