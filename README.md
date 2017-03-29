@@ -487,6 +487,8 @@ Our officially supported SDKs are all open-source and available on Github. In th
 
 - [Currently supported Azure Environments and names to use](https://github.com/Azure/azure-sdk-for-net/blob/cbcb6e489788c58b6edb849ae49bfb398de20dbd/src/Authentication/Common.Authentication/Models/AzureEnvironment.Methods.cs#L71-L143)
 
+
+
 #### Java SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-java)
 
@@ -494,9 +496,9 @@ Our officially supported SDKs are all open-source and available on Github. In th
 
 - [Login using and authentication file](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)
 
-- [Service principal login](#)
+- [Service principal login](https://github.com/arafato/Azure-RampUp/blob/master/resources/sdk/javaSDK_Login.java#L15-L26)
 
-- [Azure Active Directory login](#)
+- [Azure Active Directory login](https://github.com/arafato/Azure-RampUp/blob/master/resources/sdk/javaSDK_Login.java#L31-L39)
 
 #### NodeJS SDK
 - [Source code on Github](https://github.com/Azure/azure-sdk-for-node):   
@@ -511,7 +513,7 @@ Per default, it uses the International Cloud.
 #### Python SDK
 - [Python SDK](https://github.com/Azure/azure-sdk-for-python)
 
-- [Currently supported Azure Environments and endpoint URL's to use](#)
+- [Currently supported Azure Environments and endpoint URLs to use](https://github.com/arafato/Azure-RampUp/blob/master/resources/sdk/Python_Endpoint_URLs.md)
 
 - [Azure Environment Configuration](https://github.com/Azure/azure-sdk-for-python/blob/e92b5eda3eaea20541fd582305f6c3c30bae3a4c/doc/multicloud.rst)  
 Sample on how to configure this SDK to use a specific Azure environment (e.g. German Cloud).
