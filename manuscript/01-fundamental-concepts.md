@@ -1,0 +1,2 @@
+# Fundamental Concepts
+This chapter is about the the foundational building blocks of the Azure platform. This chapter will help you understand the basic terminology and concepts you will need every day when working with Microsoft Azure.

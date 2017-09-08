@@ -1,7 +1,7 @@
-# Azure Ramp-Up
-A curated guide to get going fast on the Azure platform. 
-Links, best-practices, explanantions and comments, I wish I had known before 
-I started using Azure.
+# Azure Core Concepts
+The eBook will be free, open sourced on Github at https://github.com/arafato/azure-core-concepts and published via Leanpub at https://leanpub.com/azure-core-concepts.
+
+I'm leaving the original Azure Ramp-Up guide here. New content will be published in the eBook only.
 
 **DRAFT VERSION 0.3** (still early stage, TOC is almost final)
 
