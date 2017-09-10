@@ -1,2 +1,10 @@
-00-intro.md
-01-fundamental-concepts.md
+intro.md
+cloud-environments.md
+datacenter-setup.md
+resource-management.md
+resource-monitoring-analysis.md
+user-management.md
+storage.md
+compute.md
+networking.md
+index.md

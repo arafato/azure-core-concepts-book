@@ -1,7 +1,8 @@
 # Azure Core Concepts
-The eBook will be free, open sourced on Github at https://github.com/arafato/azure-core-concepts and published via Leanpub at https://leanpub.com/azure-core-concepts.
+The eBook will be free and open sourced on Github at https://github.com/arafato/azure-core-concepts-book and published via Leanpub at https://leanpub.com/azure-core-concepts.
+Any royalties will be donated to http://amazonwatch.org/
 
-I'm leaving the original Azure Ramp-Up guide here. New content will be published in the eBook only.
+I'm leaving the original Azure Ramp-Up guide here until the book has been published.
 
 **DRAFT VERSION 0.3** (still early stage, TOC is almost final)
 
