@@ -7,4 +7,5 @@ user-management.md
 storage.md
 compute.md
 networking.md
+serverless.ms
 index.md
